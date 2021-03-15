@@ -1,0 +1,131 @@
+.cart-wrapper {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.cart-wrapper.active {
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 250ms;
+  padding: 15px 0 15px 0;
+  overflow: hidden;
+  box-shadow: -20px 0px 57px 2000px rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  .cartHeader {
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .totalContainer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #E0E0E0;
+    width: 400px;
+    padding: 10px;
+    background: white;
+
+    .totalHeader {
+      font-weight: bold;
+    }
+  }
+
+  .closeCart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    width: 22px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .inside-cart {
+    transition: 350ms;
+    padding: 15px 0 15px 0;
+    overflow: hidden;
+    background: white;
+    visibility: visible;
+    right: 0;
+    width: 400px;
+    top: 0;
+    height: 100%;
+    box-sizing: border-box;
+    position: fixed;
+
+    .productCartWrapper {
+      position: relative;
+      height: 120px;
+      padding: 20px 0 20px 0;
+
+      &:after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #E0E0E0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .productImgCart {
+        padding: 10px;
+        height: 100%;
+      }
+
+      .productDetails {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        width: 60%;
+        padding: 10px;
+        height: 100%;
+
+        .removeBtn {
+          position: absolute;
+          background: white;
+          border: 2px solid #E0E0E0;
+          outline: none;
+          cursor: pointer;
+          bottom: 10px;
+          right: 10px;
+        }
+
+        .productName {
+          font-size: 18px;
+        }
+
+        .productQty {
+          font-size: 16px;
+        }
+
+        .productPrice {
+          font-size: 16px;
+        }
+      }
+    }
+
+
+  }
+}
+
+

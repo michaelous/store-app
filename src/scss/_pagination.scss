@@ -1,0 +1,57 @@
+.productsPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 16px;
+  padding: 0;
+
+  .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    padding: 4px;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  .page.current {
+    font-weight: bold;
+  }
+
+  .arrow:disabled {
+    opacity: 0.4;
+    cursor: no-drop;
+  }
+
+  .arrow {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url(https://image.flaticon.com/icons/svg/271/271220.svg);
+    display: flex;
+    width: 10px;
+    height: 10px;
+    background-repeat: no-repeat;
+  }
+
+  .left-arrow {
+    background-image: url(https://image.flaticon.com/icons/svg/271/271220.svg);
+  }
+
+  .right-arrow {
+    background-image: url(https://image.flaticon.com/icons/svg/271/271228.svg);
+  }
+}
+
+.paginationText {
+  color: #a3a3a3;
+  font-style: oblique;
+}

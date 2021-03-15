@@ -1,0 +1,27 @@
+@import "scss/_reset";
+@import "scss/_flex";
+@import "scss/_productWrapper";
+@import "scss/_wrapper";
+@import "scss/_navbar";
+@import "scss/_filters";
+@import "scss/_product";
+@import "scss/_footer";
+@import "scss/_productPopup";
+@import "scss/_cart";
+@import "scss/_slider";
+@import "scss/_newsletter";
+@import "scss/_pagination";
+
+.productsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.products {
+  padding: 50px 0 50px 0;
+  display: flex;
+  color: black;
+  opacity: 1;
+  visibility: visible;
+}
