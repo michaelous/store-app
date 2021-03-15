@@ -36,12 +36,10 @@ export const Controls = (quantity) => {
     };
 
     const paginationText = () => {
-        return (quantity.length < productsPerPage)
-            ? <p className={"paginationText"}>Showing {quantity.items} products</p>
-            : <p className={"paginationText"}>Showing {productsPerPage} of {quantity.items} products </p>
+        return <p className={"paginationText"}>Showing {quantity.items} products</p>
     };
 
-    return (<FlexItem className={"productsControls topControls"}
+    return (<FlexItem className={`productsControls topControls`}
                       flexDirection={direction.ROW}
                       justifyContent={justify.SPACE_BETWEEN}
                       alignItems={align.CENTER}>

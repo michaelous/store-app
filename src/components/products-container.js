@@ -66,6 +66,7 @@ export const Products = () => {
                                         showPopup={showPopup}/>}
             </FlexItem>
             <Controls items={items.length}/>
+
         </div>
 
     )
