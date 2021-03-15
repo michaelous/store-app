@@ -15,7 +15,9 @@ export const ProductPopup = ({product, showPopup}) => {
     return (
         <div className={"popupWrapper"}>
             <div className={"productPopup"}>
-                <img alt={"product"} src={product.image}/>
+                <div className={"imgWrapper"}>
+                    <img className={"imgPopup"} alt={"product"} src={product.image}/>
+                </div>
                 <div className={"productDetails"}>
                     <p className={"productName"}>{product.name}</p>
                     <p className={"productPrice"}>{product.price}$</p>
