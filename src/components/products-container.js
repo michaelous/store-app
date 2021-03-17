@@ -13,11 +13,12 @@ import {Controls} from "./controls";
 export const Products = () => {
     const {category, sort, page, priceRange} = useContext(FiltersContext);
     const [popup, showPopup] = useState(false);
-    const [product, selectProduct] = useState('');
+    const [product, setProduct] = useState('');
     const [items, setItems] = useState([]);
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        getAllProducts().then((data) => setItems(filterByPrice(data, priceRange)));
+        getAllProducts().then((data) => setItems(data));
     }, []);
 
     useEffect(() => {
@@ -36,13 +37,17 @@ export const Products = () => {
     const productHandler = (name) => {
         return (event) => {
             showPopup(true);
-            selectProduct(getProduct(name));
+            setProduct(getProduct(name));
             event.preventDefault();
         }
     };
 
     const paginate = (array, productsPerPage, page) => {
         return array.slice((page - 1) * productsPerPage, page * productsPerPage);
+    };
+
+    const onLoad = () => {
+        setLoaded(true);
     };
 
     return (
@@ -54,7 +59,8 @@ export const Products = () => {
                       alignItems={align.CENTER}>
                 {paginate(items, maxProductPerPage, page).map((item, index) => {
                     return <div onClick={productHandler(item.name)} className={`product`} key={index}>
-                        <img alt={'product'} className={"productImg"} src={item.image}/>
+                        <img onLoad={onLoad} alt={'product'} className={`productImg ${loaded ? ' showProduct' : ''}`}
+                             src={item.image}/>
                         <p className={"productId"}>{item.id}</p>
                         <div className={"productDetails"}>
                             <p className={"productTitle"}>{item.name}</p>

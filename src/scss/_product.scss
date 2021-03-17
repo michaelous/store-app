@@ -4,6 +4,7 @@
   width: 100%;
   margin: 14px 0 0 45px;
 
+
   .product {
     height: 500px;
     width: 400px;
@@ -20,6 +21,19 @@
     justify-content: center;
     flex-direction: column;
     cursor: pointer;
+
+    .productImg.showProduct {
+      animation: appear 1s;
+
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
 
     &:hover {
       border: 2px solid lightgrey;
