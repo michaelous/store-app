@@ -5,7 +5,7 @@ import {justify} from "./consts/FlexJustify";
 import {align} from "./consts/FlexAlign";
 import {FiltersContext} from "./AppContext";
 import {maxProductPerPage} from "./consts/default";
-import arrowRight from "./images/right-arrow.svg"
+import arrow from "./images/arrow.svg"
 
 export const Controls = (quantity) => {
     const {page, setPage} = useContext(FiltersContext);
@@ -31,18 +31,31 @@ export const Controls = (quantity) => {
         if (page < getNumberOfPages()) setPage(page + 1);
     };
 
+    const previousPage = () => {
+        if (page !== 1) setPage(page - 1);
+    };
+
+
     const pagination = () => {
+        const moreThanOnePage = getNumberOfPages() > 1;
         return <ul className={"productsPagination"}>
+            {moreThanOnePage &&
+            <img className={`arrowControl arrowLeft ${page === 1 ? 'inactive' : ''}`}
+                 onClick={previousPage}
+                 src={arrow}
+                 alt={"arrow"}/>}
+
             {[...Array(productsPerPage)].map((elementInArray, index) => (
                 <li key={index} className={`page ${page === (index + 1) ? 'current' : ''}`}
                     onClick={pageHandler(index + 1)}> {index + 1} </li>
             ))}
 
 
-            <img className={`arrowRight ${page === getNumberOfPages() ? 'inactive' : ''}`}
+            {moreThanOnePage &&
+            <img className={`arrowControl arrowRight ${page === getNumberOfPages() ? 'inactive' : ''}`}
                  onClick={nextPage}
-                 src={arrowRight}
-                 alt={"arrow"}/>
+                 src={arrow}
+                 alt={"arrow"}/>}
         </ul>
     };
 

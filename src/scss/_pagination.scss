@@ -10,11 +10,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    margin: 4px;
     cursor: pointer;
     width: 16px;
     height: 16px;
     padding: 4px;
+    border: 1px solid transparent;
+    transition: 0.3s ease all;
 
     &:hover {
       font-weight: bold;
@@ -23,6 +25,8 @@
 
   .page.current {
     font-weight: bold;
+
+
   }
 
   .arrow:disabled {

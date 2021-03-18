@@ -1,37 +1,44 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {FlexItem} from "./flexitem";
 import {direction} from "./consts/FlexDirection";
 import {justify} from "./consts/FlexJustify";
 import {align} from "./consts/FlexAlign";
 import {FiltersContext} from "./AppContext";
 import {maxProductPerPage} from "./consts/default";
-import {getAllProducts} from "./consts/API";
 import {filterByCategory, filterByPrice, sortItems} from "./filters/sortHelper";
+import {getAllProducts} from "./consts/API";
 import {ProductPopup} from "./product-popup";
 import {Controls} from "./controls";
+import {FlexItem} from "./flexitem";
 
 export const Products = () => {
-    const {category, sort, page, priceRange} = useContext(FiltersContext);
+    const {category, sort, page, priceRange, basket} = useContext(FiltersContext);
     const [popup, showPopup] = useState(false);
     const [product, setProduct] = useState('');
-    const [items, setItems] = useState([]);
     const [loaded, setLoaded] = useState(false);
-
-    useEffect(() => {
-        getAllProducts().then((data) => setItems(data));
-    }, []);
+    const [items, setItems] = useState([]);
+    const [allProducts, setAllProducts] = useState([]);
 
     useEffect(() => {
         getAllProducts().then((data) => {
-            let byCategory = filterByCategory(data, category);
-            let byPrice = filterByPrice(byCategory, priceRange);
-            let sortAll = sortItems(byPrice, sort);
-            setItems(sortAll);
+            setAllProducts(data)
+            setItems(data);
         });
+    }, []);
+
+    useEffect(() => {
+        let byCategory = filterByCategory(allProducts, category);
+        let byPrice = filterByPrice(byCategory, priceRange);
+        let sortAll = sortItems(byPrice, sort);
+        setItems(sortAll);
     }, [category, priceRange, sort]);
+
 
     const getProduct = (name) => {
         return items.filter((character) => character.name === name)[0];
+    };
+
+    const inCart = (product) => {
+        return basket.includes(product);
     };
 
     const productHandler = (name) => {
@@ -58,7 +65,9 @@ export const Products = () => {
                       justifyContent={justify.FLEX_START}
                       alignItems={align.CENTER}>
                 {paginate(items, maxProductPerPage, page).map((item, index) => {
-                    return <div onClick={productHandler(item.name)} className={`product`} key={index}>
+                    return <div onClick={productHandler(item.name)}
+                                className={`product ${inCart(item) ? 'inCart' : ''}`}
+                                key={index}>
                         <img onLoad={onLoad} alt={'product'} className={`productImg ${loaded ? ' showProduct' : ''}`}
                              src={item.image}/>
                         <p className={"productId"}>{item.id}</p>
@@ -72,8 +81,6 @@ export const Products = () => {
                                         showPopup={showPopup}/>}
             </FlexItem>
             <Controls items={items.length}/>
-
         </div>
-
     )
 };
