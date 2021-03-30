@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
-import {FlexItem} from "./flexitem";
-import {justify} from "./consts/FlexJustify";
-import {align} from "./consts/FlexAlign";
-import {direction} from "./consts/FlexDirection";
-import {FiltersContext} from "./AppContext";
-import {sliderData} from "./consts/sliderData";
-import {Filters} from "./filters";
-import {Navbar} from "./navbar";
-import {Slider} from "./slider";
-import {Products} from "./products-container";
 import {defaultCategory, defaultPriceRange, defaultSort, initialPage} from "./consts/default";
+import {FiltersContext} from "./AppContext";
+import {Newsletter} from "./newsletter";
+import {Navbar} from "./navbar";
+import {Footer} from "./footer";
+import {Shop} from "./shop";
+import {Elements} from "./elements";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
+
 
 export const Wrapper = () => {
     const [sort, setSort] = useState(defaultSort);
@@ -27,17 +29,20 @@ export const Wrapper = () => {
     };
 
     return (
-        <FiltersContext.Provider value={combinedFilters}>
-            <Navbar/>
-            <Slider slides={sliderData}/>
-            <FlexItem flexDirection={direction.ROW}
-                      justifyContent={justify.SPACE_BETWEEN}
-                      alignItems={align.FLEX_START}
-                      className={'wrapperContainer'}>
-                <Filters/>
-                <Products/>
-            </FlexItem>
-        </FiltersContext.Provider>
+        <>
+            <FiltersContext.Provider value={combinedFilters}>
+                <Router>
+                    <Navbar/>
+                    <Switch>
+                        <Route path="/elements" component={Elements}/>
+                        <Route path="/" component={Shop}/>
+                    </Switch>
+                </Router>
+            </FiltersContext.Provider>
+
+            <Newsletter/>
+            <Footer/>
+        </>
     )
 };
 

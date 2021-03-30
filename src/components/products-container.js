@@ -16,11 +16,12 @@ export const Products = () => {
     const [product, setProduct] = useState('');
     const [loaded, setLoaded] = useState(false);
     const [items, setItems] = useState([]);
+    const [animation, setAnimation] = useState(false);
     const [allProducts, setAllProducts] = useState([]);
 
     useEffect(() => {
         getAllProducts().then((data) => {
-            setAllProducts(data)
+            setAllProducts(data);
             setItems(data);
         });
     }, []);
@@ -31,6 +32,14 @@ export const Products = () => {
         let sortAll = sortItems(byPrice, sort);
         setItems(sortAll);
     }, [category, priceRange, sort]);
+
+    useEffect(() => {
+        setAnimation(true);
+        const timer = setTimeout(() => {
+            setAnimation(false);
+        }, 250);
+        return () => clearTimeout(timer);
+    }, [items, page]);
 
 
     const getProduct = (name) => {
@@ -53,9 +62,8 @@ export const Products = () => {
         return array.slice((page - 1) * productsPerPage, page * productsPerPage);
     };
 
-    const onLoad = () => {
-        setLoaded(true);
-    };
+    const onLoad = () => setLoaded(true);
+
 
     return (
         <div className={"productsWrapper"}>
@@ -66,7 +74,7 @@ export const Products = () => {
                       alignItems={align.CENTER}>
                 {paginate(items, maxProductPerPage, page).map((item, index) => {
                     return <div onClick={productHandler(item.name)}
-                                className={`product ${inCart(item) ? 'inCart' : ''}`}
+                                className={`product ${inCart(item) ? 'inCart ' : ''}${animation ? 'loading' : ''}`}
                                 key={index}>
                         <img onLoad={onLoad} alt={'product'} className={`productImg ${loaded ? ' showProduct' : ''}`}
                              src={item.image}/>

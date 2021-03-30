@@ -9,10 +9,7 @@ export const Footer = () => {
                   alignItems={align.CENTER} className={"footer"}>
             <p className="copy"> 2021 Maison & All right reserved.</p>
             <ul className="footerNav">
-                <li className="navItem">Shop</li>
-                <li className="navItem">Journal</li>
-                <li className="navItem">About Us</li>
-                <li className="navItem">Contact</li>
+                <li className="navItem">XD</li>
             </ul>
         </FlexItem>
     </div>

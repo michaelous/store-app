@@ -2,18 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 70px;
   position: fixed;
   width: 100%;
   z-index: 999;
   transition: 0.3s all;
-  border-bottom: 1px solid #e3e4e8;
+
   background: transparent;
 
   &.scroll {
-    background: white;
-    height: 80px;
+    border-bottom: 1px solid #e3e4e8;
     transition: 0.3s all;
+    background: white;
+    opacity: 0.95;
+    height: 80px;
   }
 
   .navbar {
@@ -42,8 +44,9 @@
         margin: 0 25px 0 25px;
         position: relative;
         color: #707175;
+        text-decoration: none;
 
-        &:hover {
+        &:hover, &.active {
           color: black;
 
           &:after {

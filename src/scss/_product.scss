@@ -1,9 +1,22 @@
+@keyframes show {
+  0% {
+    height: 390px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 100%
+  }
+}
+
 .productContainer {
   flex-wrap: wrap;
   position: relative;
   width: 100%;
   margin: 14px 0 0 45px;
-
 
   .product {
     height: 500px;
@@ -12,7 +25,6 @@
     font-size: 18px;
     border: 2px solid white;
     background-size: cover;
-    transition: 0.3s all ease-out;
     box-sizing: content-box;
     background: #f5f5f5;
     margin: 5px;
@@ -21,19 +33,6 @@
     justify-content: center;
     flex-direction: column;
     cursor: pointer;
-
-    .productImg.showProduct {
-      animation: appear 1s;
-
-      @keyframes appear {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-    }
 
     &:hover {
       border: 2px solid lightgrey;
@@ -69,6 +68,13 @@
       position: absolute;
       top: 0;
       left: 0;
+    }
+  }
+
+  .product.loading {
+    .productImg {
+      //opacity: 0;
+      animation: show .250s ease-in;
     }
   }
 

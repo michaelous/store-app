@@ -1,0 +1,121 @@
+.elementsWrapper {
+  margin-top: 90px;
+  overflow: hidden;
+  width: 100%;
+
+  .elementsHeader {
+    width: 100%;
+    background: #f5f5f5;
+    padding: 60px 15% 60px 15%;
+    font-size: 25px;
+  }
+
+  .perksSection {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    max-width: 70vw;
+    padding-top: 70px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .flexItem {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 10px;
+      flex: 1 1 0;
+      padding: 0;
+    }
+
+    .perkHeader {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 40px;
+      font-family: sans-serif;
+      text-transform: capitalize;
+    }
+
+    .perksList {
+      margin-left: 100px;
+
+      .perk {
+        position: relative;
+        line-height: 30px;
+        font-size: 16px;
+
+        &:before {
+          background-image: url(../components/images/checked.png);
+          content: " ";
+          position: absolute;
+          left: -23px;
+          top: 9px;
+          height: 10px;
+          width: 13px;
+          display: block;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  .elementsContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    max-width: 70vw;
+    margin: 0 auto;
+    width: 100%;
+
+    .element {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: calc(0.19 * 100vw);
+      background-size: cover;
+      transition: .3s all ease-in-out;
+      text-transform: uppercase;
+      cursor: crosshair;
+      position: relative;
+      overflow: hidden;
+      margin: 10px;
+      width: 100%;
+
+      .textWrapper {
+        width: 100%;
+        padding: 10px 0 20px 10px;
+        background: rgba(255, 255, 255, 0.5);
+
+        .elementHeader {
+          padding: 10px 0 10px 0;
+          font-size: 25px;
+          opacity: 0;
+        }
+
+        .elementSubheader {
+          font-size: 18px;
+          opacity: 0;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.05);
+
+        .textWrapper {
+          background: rgba(255, 255, 255, 0.75);
+        }
+
+        .elementHeader, .elementSubheader {
+          transition: .6s all ease-in-out;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

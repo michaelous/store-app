@@ -5,7 +5,6 @@
   .productsControls {
     margin: 30px 52px 0 48px;
 
-
     .arrowControl {
       cursor: pointer;
       max-width: 13px;
@@ -17,7 +16,7 @@
     }
 
     .arrowControl.inactive {
-      opacity: 0.15;
+      opacity: 0;
       cursor: not-allowed;
     }
 
@@ -27,17 +26,16 @@
 
     .productsQuantity {
       z-index: 1;
-      margin-right: 20px;
       font-size: 16px;
+      margin-right: 20px;
       padding: 1px 5px 1px 5px;
-
     }
 
     .productsThumbnails {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: row;
+      align-items: center;
+      justify-content: center;
 
       a {
         padding: 5px;
