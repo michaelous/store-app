@@ -12,7 +12,7 @@ export class FlexItem extends React.Component {
     };
 
     render() {
-        return <div className={`flexItem ${this.props.className}`}
+        return <div className={`${this.props.className}`}
                     style={{
                         flexDirection: this.props.flexDirection,
                         justifyContent: this.props.justifyContent,

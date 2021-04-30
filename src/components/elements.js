@@ -23,8 +23,8 @@ export const Elements = () => {
             </div>
 
             <div className={"elementsContent"}>
-                {elementsContent.map((el) => {
-                    return <div className={"element"}
+                {elementsContent.map((el, index) => {
+                    return <div key={index} className={"element"}
                                 style={{backgroundImage: `url(${el.image})`}}>
                         <div className={"textWrapper"}>
                             <p className={"elementHeader"}>{el.header}</p>

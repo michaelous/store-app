@@ -1,14 +1,21 @@
 import React, {useContext} from 'react';
 import {FakeDescription} from "./consts/description";
 import {FiltersContext} from "./AppContext";
+import {localStorageUtil} from "./storage/localStorage";
 
 export const ProductPopup = ({product, showPopup}) => {
     const {basket, setBasket} = useContext(FiltersContext);
 
+    const itemInCart = (product) => {
+        return localStorageUtil.itemInBasket(product);
+    };
+
     const cartHandler = (product) => {
         return (event) => {
-            if (!basket.includes(product)) setBasket([...basket, product]);
-            event.preventDefault();
+            if (!itemInCart(product)) {
+                setBasket([...basket, product], localStorageUtil.updateBasket([...basket, product]));
+                event.preventDefault();
+            }
         }
     };
 
@@ -23,7 +30,8 @@ export const ProductPopup = ({product, showPopup}) => {
                     <p className={"productPrice"}>{product.price}$</p>
                     <p className={"productCategory"}>{product.category}</p>
                     <p className={"productDescription"}>{FakeDescription}</p>
-                    <button className={"addToCart"} onClick={cartHandler(product)}>Add To Cart</button>
+                    <button className={`addToCart ${itemInCart(product) ? 'added' : ''}`}
+                            onClick={cartHandler(product)}>{itemInCart(product) ? 'Added To Cart ' : 'Add To Cart'}</button>
                 </div>
                 <button className={"closePopup"} onClick={() => showPopup(false)}>X</button>
             </div>

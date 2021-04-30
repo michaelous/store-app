@@ -1,9 +1,10 @@
 export const sortByABCName = (data) => data.sort((leftSide, rightSide) => {
-    if (leftSide.name.toLowerCase() < rightSide.name.toLowerCase()) return -1;
-    if (leftSide.name.toLowerCase() > rightSide.name.toLowerCase()) return 1;
+    return (leftSide.name.toLowerCase() < rightSide.name.toLowerCase()) ? -1 : 1
 });
 
-export const sortByPrice = (data) => data.sort((a, b) => Number(a.price) - Number(b.price));
+export const sortByPrice = (data) => data.sort((a, b) => {
+    return Number(a.price) - Number(b.price);
+});
 
 export const isBetween = (num1, num2, value) => value > num1 && value < num2;
 

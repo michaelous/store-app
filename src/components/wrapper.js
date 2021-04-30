@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {defaultCategory, defaultPriceRange, defaultSort, initialPage} from "./consts/default";
 import {FiltersContext} from "./AppContext";
 import {Newsletter} from "./newsletter";
@@ -6,19 +7,16 @@ import {Navbar} from "./navbar";
 import {Footer} from "./footer";
 import {Shop} from "./shop";
 import {Elements} from "./elements";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
+import {Checkout} from "./checkout";
 
 
 export const Wrapper = () => {
     const [sort, setSort] = useState(defaultSort);
     const [page, setPage] = useState(initialPage);
-    const [basket, setBasket] = useState([]);
     const [category, setCategory] = useState(defaultCategory);
     const [priceRange, setPriceRange] = useState(defaultPriceRange);
+    const basketData = JSON.parse(localStorage.getItem(`basket`));
+    const [basket, setBasket] = useState(basketData);
 
     const combinedFilters = {
         page, setPage,
@@ -29,20 +27,18 @@ export const Wrapper = () => {
     };
 
     return (
-        <>
-            <FiltersContext.Provider value={combinedFilters}>
-                <Router>
-                    <Navbar/>
-                    <Switch>
-                        <Route path="/elements" component={Elements}/>
-                        <Route path="/" component={Shop}/>
-                    </Switch>
-                </Router>
-            </FiltersContext.Provider>
-
+        <FiltersContext.Provider value={combinedFilters}>
+            <Router>
+                <Navbar/>
+                <Switch>
+                    <Route path="/elements" component={Elements}/>
+                    <Route path="/checkout" component={Checkout}/>
+                    <Route path="/" component={Shop}/>
+                </Switch>
+            </Router>
             <Newsletter/>
             <Footer/>
-        </>
+        </FiltersContext.Provider>
     )
 };
 

@@ -3,7 +3,7 @@
     height: 390px;
     opacity: 0;
   }
-  50% {
+  80% {
     opacity: 0;
   }
   100% {
@@ -13,6 +13,7 @@
 }
 
 .productContainer {
+  display: flex;
   flex-wrap: wrap;
   position: relative;
   width: 100%;
@@ -73,8 +74,8 @@
 
   .product.loading {
     .productImg {
-      //opacity: 0;
-      animation: show .250s ease-in;
+      opacity: 0;
+      animation: show .400s ease-in;
     }
   }
 

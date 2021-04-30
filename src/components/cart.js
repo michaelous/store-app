@@ -1,8 +1,11 @@
 import React, {useContext} from 'react';
-import {FiltersContext} from "./AppContext";
+import {localStorageUtil} from "./storage/localStorage";
 import {FlexItem} from "./flexitem";
+import {NavLink, Route, Switch} from "react-router-dom";
+import {FiltersContext} from "./AppContext";
 import {justify} from "./consts/FlexJustify";
 import {align} from "./consts/FlexAlign";
+import {Checkout} from "./checkout";
 
 export const Cart = ({cart, setCart}) => {
     const {basket, setBasket} = useContext(FiltersContext);
@@ -10,15 +13,13 @@ export const Cart = ({cart, setCart}) => {
     const removeHandler = (product) => {
         return (event) => {
             let remove = basket.filter((character) => character.name !== product);
+            setBasket(remove, localStorageUtil.updateBasket(remove));
             event.preventDefault();
-            setBasket(remove);
         }
     };
 
     const getTotal = () => {
-        let sum = 0;
-        basket.map((product) => sum += product.price * 1);
-        return '$' + sum.toFixed(2);
+        return basket.reduce((accelerator, item) => accelerator + item.price * 1, 0);
     };
 
     const closeCart = () => setCart(false);
@@ -45,7 +46,8 @@ export const Cart = ({cart, setCart}) => {
                 })}
 
                 <div className={"totalContainer"}>
-                    <p className={"totalHeader"}>Subtotal: {getTotal()}</p>
+                    <p className={"totalHeader"}>Subtotal: ${getTotal()}</p>
+                    <NavLink className={"checkoutBtn"} exact to="/checkout">Go To Checkout</NavLink>
                 </div>
             </div>
         </div>

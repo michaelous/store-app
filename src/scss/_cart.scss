@@ -4,6 +4,7 @@
   overflow: hidden;
 }
 
+
 .cart-wrapper.active {
   z-index: 999;
   top: 0;
@@ -30,15 +31,31 @@
     position: absolute;
     bottom: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-top: 1px solid #E0E0E0;
-    width: 400px;
-    padding: 10px;
     background: white;
+    width: 400px;
 
     .totalHeader {
+      padding: 10px;
       font-weight: bold;
+    }
+
+    .checkoutBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      background: black;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      height: 35px;
+      width: 100%;
+      border: none;
     }
   }
 
@@ -71,6 +88,7 @@
     position: fixed;
 
     .productCartWrapper {
+      display: flex;
       position: relative;
       height: 120px;
       padding: 20px 0 20px 0;

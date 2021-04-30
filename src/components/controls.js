@@ -11,14 +11,16 @@ export const Controls = (quantity) => {
     const {page, setPage} = useContext(FiltersContext);
     const [productsPerPage, setProductsPerPage] = useState(4);
 
+    const getNumberOfPages = () => {
+        return Math.ceil(quantity.items / maxProductPerPage);
+    };
+
+
     useEffect(() => {
         setProductsPerPage(getNumberOfPages);
         if (quantity.items <= 4) setPage(1);
     }, [quantity.items]);
 
-    const getNumberOfPages = () => {
-        return Math.ceil(quantity.items / maxProductPerPage);
-    };
 
     const pageHandler = (val) => {
         return (event) => {

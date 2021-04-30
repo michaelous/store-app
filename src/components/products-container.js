@@ -9,6 +9,7 @@ import {getAllProducts} from "./consts/API";
 import {ProductPopup} from "./product-popup";
 import {Controls} from "./controls";
 import {FlexItem} from "./flexitem";
+import {localStorageUtil} from "./storage/localStorage";
 
 export const Products = () => {
     const {category, sort, page, priceRange, basket} = useContext(FiltersContext);
@@ -33,21 +34,21 @@ export const Products = () => {
         setItems(sortAll);
     }, [category, priceRange, sort]);
 
-    useEffect(() => {
-        setAnimation(true);
-        const timer = setTimeout(() => {
-            setAnimation(false);
-        }, 250);
-        return () => clearTimeout(timer);
-    }, [items, page]);
+    // useEffect(() => {
+    //     setAnimation(true);
+    //     const timer = setTimeout(() => {
+    //         setAnimation(false);
+    //     }, 400);
+    //     return () => clearTimeout(timer);
+    // }, [items, page]);
 
 
     const getProduct = (name) => {
         return items.filter((character) => character.name === name)[0];
     };
 
-    const inCart = (product) => {
-        return basket.includes(product);
+    const inCart = (item) => {
+        return localStorageUtil.itemInBasket(item);
     };
 
     const productHandler = (name) => {
@@ -64,7 +65,6 @@ export const Products = () => {
 
     const onLoad = () => setLoaded(true);
 
-
     return (
         <div className={"productsWrapper"}>
             <Controls items={items.length}/>
@@ -76,7 +76,7 @@ export const Products = () => {
                     return <div onClick={productHandler(item.name)}
                                 className={`product ${inCart(item) ? 'inCart ' : ''}${animation ? 'loading' : ''}`}
                                 key={index}>
-                        <img onLoad={onLoad} alt={'product'} className={`productImg ${loaded ? ' showProduct' : ''}`}
+                        <img onLoad={onLoad} alt={'product'} className={`productImg ${loaded ? 'showProduct' : ''}`}
                              src={item.image}/>
                         <p className={"productId"}>{item.id}</p>
                         <div className={"productDetails"}>
