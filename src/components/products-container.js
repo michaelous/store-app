@@ -34,14 +34,6 @@ export const Products = () => {
         setItems(sortAll);
     }, [category, priceRange, sort]);
 
-    // useEffect(() => {
-    //     setAnimation(true);
-    //     const timer = setTimeout(() => {
-    //         setAnimation(false);
-    //     }, 400);
-    //     return () => clearTimeout(timer);
-    // }, [items, page]);
-
 
     const getProduct = (name) => {
         return items.filter((character) => character.name === name)[0];

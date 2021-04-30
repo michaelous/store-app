@@ -30,7 +30,6 @@ export const Elements = () => {
                             <p className={"elementHeader"}>{el.header}</p>
                             <p className={"elementSubheader"}>{el.subheader} </p>
                         </div>
-
                     </div>
                 })}
             </div>

@@ -1,0 +1,197 @@
+.checkoutWrapper {
+  margin-top: 90px;
+  overflow: hidden;
+  width: 100%;
+
+  .checkoutHeader {
+    width: 100%;
+    background: #f5f5f5;
+    padding: 60px 15% 60px 15%;
+    font-size: 25px;
+  }
+
+  .checkoutInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 70px 0 70px 0;
+    position: relative;
+    background: #f5f5f5;
+    min-height: 500px;
+
+    @media (min-width: 1080px) {
+      max-width: 70%;
+      margin: 100px auto;
+    }
+
+    .checkoutProductList {
+      .product {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        background: white;
+        width: 400px;
+        margin: 10px;
+
+        .productImgCart {
+          max-height: 148px;
+        }
+
+        .priceFinal {
+          font-weight: bold;
+          padding: 5px;
+        }
+
+        .deleteProduct {
+          display: flex;
+          justify-content: center;
+          margin-left: 10px;
+          align-items: center;
+          background: white;
+          cursor: pointer;
+          width: 24px;
+          padding: 5px;
+          height: auto;
+          border: none;
+
+          .icon {
+            max-width: 14px;
+          }
+        }
+
+        .productDetails {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 5px 10px 5px 10px;
+          flex-direction: column;
+          height: 80px;
+          width: 100%;
+
+          .productName {
+            font-weight: bold;
+          }
+
+          .productPrice {
+            font-size: 14px;
+            padding: 5px;
+          }
+        }
+      }
+
+    }
+
+    .paymentFinal {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      box-sizing: content-box;
+      max-width: 400px;
+      margin: 5px;
+
+      p:first-child {
+        font-weight: bold;
+      }
+
+      .delivery, .returns {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 5px;
+        //margin: 4px;
+        padding: 20px;
+        background: white;
+        position: relative;
+
+        p {
+          font-size: 15px;
+          margin-left: 70px;
+        }
+
+        .iconHeader {
+          font-weight: bold;
+        }
+
+        .iconSubheader {
+          margin-top: 5px;
+        }
+
+        .icon {
+          position: absolute;
+          max-width: 40px;
+          left: 25px;
+        }
+
+        .shipmentSign {
+          max-width: 40px;
+          left: 25px;
+        }
+
+        .returnSign {
+          max-width: 30px;
+          left: 35px;
+        }
+      }
+
+      .total {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        background: white;
+        overflow: hidden;
+        padding: 36px;
+        width: 100%;
+        margin: 5px;
+
+        .totalHeader {
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        .sub-total {
+          margin-top: 20px;
+          padding: 20px 0 5px 0;
+
+          border-top: 1px solid lightgrey;
+        }
+
+        .sub-total, .delivery-option {
+          display: flex;
+          justify-content: space-between;
+
+          p:first-child {
+            text-transform: capitalize;
+            font-weight: 600;
+          }
+        }
+
+        .checkoutBtn {
+          background: black;
+          color: white;
+          cursor: pointer;
+          border: 2px solid green;
+          margin: 20px 0 20px 0;
+          padding: 10px;
+        }
+
+        .acceptedPayments {
+          font-weight: bold;
+        }
+
+        .visa {
+          margin-top: 10px;
+          width: 100%;
+          height: auto;
+          max-width: 330px;
+        }
+      }
+    }
+  }
+}
+
