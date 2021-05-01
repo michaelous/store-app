@@ -40,7 +40,7 @@ export const Products = () => {
     };
 
     const inCart = (item) => {
-        return localStorageUtil.itemInBasket(item);
+        return basket.some(({name}) => name === item.name);
     };
 
     const productHandler = (name) => {
