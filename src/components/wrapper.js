@@ -15,7 +15,7 @@ export const Wrapper = () => {
     const [page, setPage] = useState(initialPage);
     const [category, setCategory] = useState(defaultCategory);
     const [priceRange, setPriceRange] = useState(defaultPriceRange);
-    const basketData = JSON.parse(localStorage.getItem(`basket`));
+    const basketData = JSON.parse(localStorage.getItem(`basket`) || []);
     const [basket, setBasket] = useState(basketData);
 
     const combinedFilters = {
