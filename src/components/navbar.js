@@ -10,8 +10,8 @@ import {Cart} from "./cart";
 export const Navbar = () => {
     const [scroll, setScroll] = useState(false);
     const [cart, setCart] = useState(false);
-    // const {basket} = useContext(FiltersContext);
-    // const quantity = basket.length;
+    const {basket} = useContext(FiltersContext);
+    const quantity = basket.length;
     const showCart = () => setCart(!cart);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ export const Navbar = () => {
                         <NavLink className={"navItem"} exact to="/elements">elements</NavLink>
                         <li className={"navItem cartNavDetails"}>
                             <img className={"cartIcon"} alt={"cart"} onClick={showCart} src={cartImg}/>
-                            {/*<p className={"quantity"}>{quantity}</p>*/}
+                            <p className={"quantity"}>{quantity}</p>
                         </li>
                     </ul>
                 </nav>

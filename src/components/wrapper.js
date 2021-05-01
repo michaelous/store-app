@@ -8,6 +8,7 @@ import {Footer} from "./footer";
 import {Shop} from "./shop";
 import {Elements} from "./elements";
 import {Checkout} from "./checkout";
+import {localStorageUtil} from "./storage/localStorage";
 
 
 export const Wrapper = () => {
@@ -15,7 +16,7 @@ export const Wrapper = () => {
     const [page, setPage] = useState(initialPage);
     const [category, setCategory] = useState(defaultCategory);
     const [priceRange, setPriceRange] = useState(defaultPriceRange);
-    const basketData = JSON.parse(localStorage.getItem(`basket`));
+    const basketData = localStorageUtil.getDataByKey('basket') || [];
     const [basket, setBasket] = useState(basketData);
 
     const combinedFilters = {
