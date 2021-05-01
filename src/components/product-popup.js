@@ -6,8 +6,8 @@ import {localStorageUtil} from "./storage/localStorage";
 export const ProductPopup = ({product, showPopup}) => {
     const {basket, setBasket} = useContext(FiltersContext);
 
-    const itemInCart = (product) => {
-        return localStorageUtil.itemInBasket(product);
+    const itemInCart = (item) => {
+        return basket.some(({name}) => name === item.name);
     };
 
     const cartHandler = (product) => {

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {FlexItem} from "./flexitem";
 import {justify} from "./consts/FlexJustify";
 import {align} from "./consts/FlexAlign";
