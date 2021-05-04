@@ -6,8 +6,8 @@ import {NavLink} from "react-router-dom";
 import {FlexItem} from "./flexitem";
 import {Cart} from "./cart";
 
-
 export const Navbar = () => {
+    const url = 'https://michaelous.github.io/store-app';
     const [scroll, setScroll] = useState(false);
     const [cart, setCart] = useState(false);
     const {basket} = useContext(FiltersContext);
@@ -24,7 +24,9 @@ export const Navbar = () => {
         <>
             <FlexItem className={`navbarWrapper ${scroll ? ' scroll' : ''}`}>
                 <nav className={"navbar"}>
-                    <img className={"logo"} alt={"logo"} src={logo}/>
+                    <a href={url}>
+                        <img className={"logo"} alt={"logo"} src={logo}/>
+                    </a>
                     <ul className={"navigation"}>
                         <NavLink className={"navItem"} exact to="/">shop</NavLink>
                         <NavLink className={"navItem"} exact to="/elements">elements</NavLink>
