@@ -18,7 +18,7 @@ export const Cart = ({cart, setCart}) => {
     };
 
     const getTotal = () => {
-        return basket.reduce((accelerator, item) => accelerator + item.price * 1, 0);
+        return basket.reduce((accelerator, item) => accelerator + item.price * 1, 0).toFixed(2);
     };
 
     const closeCart = () => setCart(false);
