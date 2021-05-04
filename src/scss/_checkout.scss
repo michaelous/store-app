@@ -31,7 +31,7 @@
         flex-direction: row;
         padding: 10px;
         background: white;
-        width: 400px;
+        width: 500px;
         margin: 10px;
 
         .productImgCart {
@@ -89,8 +89,9 @@
       align-items: center;
       overflow: hidden;
       box-sizing: content-box;
-      max-width: 400px;
+      max-width: 500px;
       margin: 5px;
+      width: 100%;
 
       p:first-child {
         font-weight: bold;
@@ -104,8 +105,7 @@
         box-sizing: border-box;
         width: 100%;
         margin: 5px;
-        //margin: 4px;
-        padding: 20px;
+        padding: 19px;
         background: white;
         position: relative;
 
