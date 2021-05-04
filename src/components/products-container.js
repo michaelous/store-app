@@ -4,36 +4,30 @@ import {justify} from "./consts/FlexJustify";
 import {align} from "./consts/FlexAlign";
 import {FiltersContext} from "./AppContext";
 import {maxProductPerPage} from "./consts/default";
-import {filterByCategory, filterByPrice, sortItems} from "./filters/sortHelper";
+import {productsHelper} from "./filters/productsHelper";
 import {getAllProducts} from "./consts/API";
 import {ProductPopup} from "./product-popup";
 import {Controls} from "./controls";
 import {FlexItem} from "./flexitem";
-import {localStorageUtil} from "./storage/localStorage";
 
 export const Products = () => {
-    const {category, sort, page, priceRange, basket} = useContext(FiltersContext);
+    const {page, basket, sort, category, priceRange} = useContext(FiltersContext);
     const [popup, showPopup] = useState(false);
-    const [product, setProduct] = useState('');
     const [loaded, setLoaded] = useState(false);
-    const [items, setItems] = useState([]);
-    const [animation, setAnimation] = useState(false);
+    const [product, setProduct] = useState({});
     const [allProducts, setAllProducts] = useState([]);
+    const [items, setProducts] = useState([]);
 
     useEffect(() => {
         getAllProducts().then((data) => {
             setAllProducts(data);
-            setItems(data);
+            setProducts(productsHelper.filterProducts(data, category, priceRange, sort));
         });
     }, []);
 
     useEffect(() => {
-        let byCategory = filterByCategory(allProducts, category);
-        let byPrice = filterByPrice(byCategory, priceRange);
-        let sortAll = sortItems(byPrice, sort);
-        setItems(sortAll);
+        setProducts(productsHelper.filterProducts(allProducts, category, priceRange, sort));
     }, [category, priceRange, sort]);
-
 
     const getProduct = (name) => {
         return items.filter((character) => character.name === name)[0];
@@ -66,8 +60,7 @@ export const Products = () => {
                       alignItems={align.CENTER}>
                 {paginate(items, maxProductPerPage, page).map((item, index) => {
                     return <div onClick={productHandler(item.name)}
-                                className={`product ${inCart(item) ? 'inCart ' : ''}${animation ? 'loading' : ''}`}
-                                key={index}>
+                                className={`product ${inCart(item) ? 'inCart ' : ''}`} key={index}>
                         <img onLoad={onLoad} alt={'product'} className={`productImg ${loaded ? 'showProduct' : ''}`}
                              src={item.image}/>
                         <p className={"productId"}>{item.id}</p>

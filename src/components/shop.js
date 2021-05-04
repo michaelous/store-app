@@ -8,7 +8,6 @@ import {align} from "./consts/FlexAlign";
 import {Filters} from "./filters";
 import {Products} from "./products-container";
 
-
 export const Shop = () => {
     return (
         <>
