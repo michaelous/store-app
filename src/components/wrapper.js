@@ -10,7 +10,6 @@ import {Elements} from "./elements";
 import {Checkout} from "./checkout";
 import {localStorageUtil} from "./storage/localStorage";
 
-
 export const Wrapper = () => {
     const [sort, setSort] = useState(defaultSort);
     const [page, setPage] = useState(initialPage);
