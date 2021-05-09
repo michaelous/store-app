@@ -26,4 +26,8 @@ export class productsHelper {
         let byPrice = this.filterByPrice(byCategory, priceRange);
         return this.sortItems(byPrice, sort);
     };
+
+    static totalPrice = (basket) => {
+        return basket.reduce((accelerator, item) => accelerator + item.price * 1, 0).toFixed(2);
+    }
 }

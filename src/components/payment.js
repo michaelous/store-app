@@ -1,14 +1,19 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import {FiltersContext} from "./AppContext";
 import {justify} from "./consts/FlexJustify";
 import {direction} from "./consts/FlexDirection";
 import {FlexItem} from "./flexitem";
 import shipmentSign from "./images/delivery.png";
 import returnSign from "./images/return.png";
 import payment from "./images/pay.png";
+import {productsHelper} from "./filters/productsHelper";
 import {Tile} from "./tile.js";
+import {Form} from "./react-form";
 
 
 export const Payment = () => {
+    const {basket} = useContext(FiltersContext);
+
     return (
         <div className={"paymentFinal"}>
             <Tile icon={shipmentSign} header={'Free Standard Delivery'}
@@ -20,7 +25,7 @@ export const Payment = () => {
                 <FlexItem className={"sub-total"} flexDirection={direction.ROW}
                           justifyContent={justify.SPACE_BETWEEN}>
                     <p>sub-total</p>
-                    <p>$1235</p>
+                    <p>${productsHelper.totalPrice(basket)}</p>
                 </FlexItem>
 
                 <FlexItem className={"delivery-option"} flexDirection={direction.ROW}
@@ -28,9 +33,12 @@ export const Payment = () => {
                     <p>delivery</p>
                     <p>free</p>
                 </FlexItem>
-                <button className={"checkoutBtn"}>CHECKOUT</button>
-                <p className={"acceptedPayments"}>We Accept</p>
-                <img className={'visa'} alt={'payments'} src={payment}/>
+
+
+                <Form/>
+
+                {/*<p className={"acceptedPayments"}>We Accept</p>*/}
+                {/*<img className={'visa'} alt={'payments'} src={payment}/>*/}
             </div>
         </div>
     )

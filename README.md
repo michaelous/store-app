@@ -2,10 +2,10 @@
 
 
 React Hooks <br>
+React Hook Form <br>
 React Router <br>
+Local Storage <br>
 Context API
 
 
-Working on / ToDo: <br>
-RWD <br>
-Styled-components
+Working on: RWD <br>

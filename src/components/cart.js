@@ -5,6 +5,7 @@ import {NavLink} from "react-router-dom";
 import {FiltersContext} from "./AppContext";
 import {justify} from "./consts/FlexJustify";
 import {align} from "./consts/FlexAlign";
+import {productsHelper} from "./filters/productsHelper";
 
 export const Cart = ({cart, setCart}) => {
     const {basket, setBasket} = useContext(FiltersContext);
@@ -15,10 +16,6 @@ export const Cart = ({cart, setCart}) => {
             setBasket(remove, localStorageUtil.updateBasket(remove));
             event.preventDefault();
         }
-    };
-
-    const getTotal = () => {
-        return basket.reduce((accelerator, item) => accelerator + item.price * 1, 0).toFixed(2);
     };
 
     const closeCart = () => setCart(false);
@@ -45,7 +42,7 @@ export const Cart = ({cart, setCart}) => {
                 })}
 
                 <div className={"totalContainer"}>
-                    <p className={"totalHeader"}>Subtotal: ${getTotal()}</p>
+                    <p className={"totalHeader"}>Subtotal: ${productsHelper.totalPrice(basket)}</p>
                     <NavLink className={"checkoutBtn"} exact to="/checkout">Go To Checkout</NavLink>
                 </div>
             </div>
