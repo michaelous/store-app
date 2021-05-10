@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/store-app/static/css/main.3e5492d0.chunk.css",
-    "main.js": "/store-app/static/js/main.1900669a.chunk.js",
-    "main.js.map": "/store-app/static/js/main.1900669a.chunk.js.map",
-    "runtime-main.js": "/store-app/static/js/runtime-main.905f820b.js",
-    "runtime-main.js.map": "/store-app/static/js/runtime-main.905f820b.js.map",
+    "main.css": "/store-app/static/css/main.f648d960.chunk.css",
+    "main.js": "/store-app/static/js/main.31a22cad.chunk.js",
+    "main.js.map": "/store-app/static/js/main.31a22cad.chunk.js.map",
+    "runtime-main.js": "/store-app/static/js/runtime-main.b47e8339.js",
+    "runtime-main.js.map": "/store-app/static/js/runtime-main.b47e8339.js.map",
     "static/css/2.d59c41ec.chunk.css": "/store-app/static/css/2.d59c41ec.chunk.css",
-    "static/js/2.1e560cdb.chunk.js": "/store-app/static/js/2.1e560cdb.chunk.js",
-    "static/js/2.1e560cdb.chunk.js.map": "/store-app/static/js/2.1e560cdb.chunk.js.map",
-    "static/js/3.ac9a67bf.chunk.js": "/store-app/static/js/3.ac9a67bf.chunk.js",
-    "static/js/3.ac9a67bf.chunk.js.map": "/store-app/static/js/3.ac9a67bf.chunk.js.map",
+    "static/js/2.da8e11fb.chunk.js": "/store-app/static/js/2.da8e11fb.chunk.js",
+    "static/js/2.da8e11fb.chunk.js.map": "/store-app/static/js/2.da8e11fb.chunk.js.map",
     "index.html": "/store-app/index.html",
     "static/css/2.d59c41ec.chunk.css.map": "/store-app/static/css/2.d59c41ec.chunk.css.map",
-    "static/css/main.3e5492d0.chunk.css.map": "/store-app/static/css/main.3e5492d0.chunk.css.map",
-    "static/js/2.1e560cdb.chunk.js.LICENSE.txt": "/store-app/static/js/2.1e560cdb.chunk.js.LICENSE.txt",
+    "static/css/main.f648d960.chunk.css.map": "/store-app/static/css/main.f648d960.chunk.css.map",
+    "static/js/2.da8e11fb.chunk.js.LICENSE.txt": "/store-app/static/js/2.da8e11fb.chunk.js.LICENSE.txt",
     "static/media/arrow.02216e31.svg": "/store-app/static/media/arrow.02216e31.svg",
     "static/media/app.scss": "/store-app/static/media/checked.45da635f.png",
     "static/media/delivery.b4aaa8c3.png": "/store-app/static/media/delivery.b4aaa8c3.png",
@@ -28,10 +26,10 @@
     "static/media/slide3.c7501a48.png": "/store-app/static/media/slide3.c7501a48.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.905f820b.js",
+    "static/js/runtime-main.b47e8339.js",
     "static/css/2.d59c41ec.chunk.css",
-    "static/js/2.1e560cdb.chunk.js",
-    "static/css/main.3e5492d0.chunk.css",
-    "static/js/main.1900669a.chunk.js"
+    "static/js/2.da8e11fb.chunk.js",
+    "static/css/main.f648d960.chunk.css",
+    "static/js/main.31a22cad.chunk.js"
   ]
 }
