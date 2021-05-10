@@ -1,15 +1,16 @@
 import React, {useContext} from 'react'
-import {FlexItem} from "./flexitem";
-import {justify} from "./consts/FlexJustify";
-import {align} from "./consts/FlexAlign";
-import {direction} from "./consts/FlexDirection";
-import {localStorageUtil} from "./storage/localStorage";
-import close from "./images/x.png";
-import {FiltersContext} from "./AppContext";
+import {FlexItem} from "../../components/flexitem";
+import {justify} from "../../components/consts/FlexJustify";
+import {align} from "../../components/consts/FlexAlign";
+import {direction} from "../../components/consts/FlexDirection";
+import {localStorageUtil} from "../../components/storage/localStorage";
+import close from "../../components/images/x.png";
+import {AppContext} from "../../components/context/appContext";
 import {Payment} from "./payment";
 
+
 export const Checkout = () => {
-    const {basket, setBasket} = useContext(FiltersContext);
+    const {basket, setBasket} = useContext(AppContext);
 
     const removeHandler = (product) => {
         return (event) => {

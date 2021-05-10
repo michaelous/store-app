@@ -1,11 +1,11 @@
 import React from "react";
-import {Wrapper} from "./components/wrapper";
+import {RouteContext} from "./components/routeContext";
 import './app.scss';
 
 function App() {
     return (
         <div className="App">
-            <Wrapper/>
+            <RouteContext/>
         </div>
     );
 }

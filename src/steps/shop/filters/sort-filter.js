@@ -1,8 +1,9 @@
 import React, {useContext} from "react";
-import {FiltersContext} from "../AppContext";
+import {AppContext} from "../../../components/context/appContext";
 
 export const SortFilter = () => {
-    const {sort, setSort} = useContext(FiltersContext);
+    const {sort, setSort} = useContext(AppContext);
+
     const OnSortChange = (event) => {
         setSort(event.target.value);
     };

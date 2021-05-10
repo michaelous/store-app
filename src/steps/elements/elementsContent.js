@@ -1,6 +1,6 @@
-import home1 from "../images/home1.jpg";
-import home2 from "../images/home2.jpg";
-import home3 from "../images/home3.jpg";
+import home1 from "../../components/images/home1.jpg";
+import home2 from "../../components/images/home2.jpg";
+import home3 from "../../components/images/home3.jpg";
 
 export const elementsContent = [
     {

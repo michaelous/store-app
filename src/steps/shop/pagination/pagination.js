@@ -1,26 +1,24 @@
 import React, {useEffect, useContext, useState} from 'react';
-import {FlexItem} from "./flexitem";
-import {direction} from "./consts/FlexDirection";
-import {justify} from "./consts/FlexJustify";
-import {align} from "./consts/FlexAlign";
-import {FiltersContext} from "./AppContext";
-import {maxProductPerPage} from "./consts/default";
-import arrow from "./images/arrow.svg"
+import {FlexItem} from "../../../components/flexitem";
+import {direction} from "../../../components/consts/FlexDirection";
+import {justify} from "../../../components/consts/FlexJustify";
+import {align} from "../../../components/consts/FlexAlign";
+import {AppContext} from "../../../components/context/appContext";
+import {maxProductPerPage} from "../../../components/consts/default";
+import arrow from "../../../components/images/arrow.svg"
 
-export const Controls = (quantity) => {
-    const {page, setPage} = useContext(FiltersContext);
+export const Pagination = (quantity) => {
+    const {page, setPage} = useContext(AppContext);
     const [productsPerPage, setProductsPerPage] = useState(4);
 
     const getNumberOfPages = () => {
         return Math.ceil(quantity.items / maxProductPerPage);
     };
 
-
     useEffect(() => {
         setProductsPerPage(getNumberOfPages);
         if (quantity.items <= 4) setPage(1);
     }, [quantity.items]);
-
 
     const pageHandler = (val) => {
         return (event) => {
@@ -37,7 +35,6 @@ export const Controls = (quantity) => {
         if (page !== 1) setPage(page - 1);
     };
 
-
     const pagination = () => {
         const moreThanOnePage = getNumberOfPages() > 1;
         return <ul className={"productsPagination"}>
@@ -51,7 +48,6 @@ export const Controls = (quantity) => {
                 <li key={index} className={`page ${page === (index + 1) ? 'current' : ''}`}
                     onClick={pageHandler(index + 1)}> {index + 1} </li>
             ))}
-
 
             {moreThanOnePage &&
             <img className={`arrowControl arrowRight ${page === getNumberOfPages() ? 'inactive' : ''}`}

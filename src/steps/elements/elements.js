@@ -1,12 +1,11 @@
 import React from 'react'
-import {FlexItem} from "./flexitem";
-import {justify} from "./consts/FlexJustify";
-import {align} from "./consts/FlexAlign";
-import {direction} from "./consts/FlexDirection";
-import {elementsContent} from "./consts/elementsContent";
-import {perkData} from "./data/perks";
+import {FlexItem} from "../../components/flexitem";
+import {justify} from "../../components/consts/FlexJustify";
+import {align} from "../../components/consts/FlexAlign";
+import {direction} from "../../components/consts/FlexDirection";
+import {elementsContent} from "./elementsContent";
+import {perkData} from "./perks";
 import {Perks} from "./perk";
-
 
 export const Elements = () => {
     return (

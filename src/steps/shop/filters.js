@@ -1,8 +1,8 @@
 import React from 'react';
-import {FlexItem} from "./flexitem";
-import {align} from "./consts/FlexAlign";
-import {justify} from "./consts/FlexJustify";
-import {direction} from "./consts/FlexDirection";
+import {FlexItem} from "../../components/flexitem";
+import {align} from "../../components/consts/FlexAlign";
+import {justify} from "../../components/consts/FlexJustify";
+import {direction} from "../../components/consts/FlexDirection";
 import 'rc-slider/assets/index.css';
 import {PriceFilter} from "./filters/price-filter";
 import {SortFilter} from "./filters/sort-filter";

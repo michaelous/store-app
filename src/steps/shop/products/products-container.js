@@ -1,17 +1,17 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {direction} from "./consts/FlexDirection";
-import {justify} from "./consts/FlexJustify";
-import {align} from "./consts/FlexAlign";
-import {FiltersContext} from "./AppContext";
-import {maxProductPerPage} from "./consts/default";
-import {productsHelper} from "./filters/productsHelper";
-import {getAllProducts} from "./consts/API";
+import {direction} from "../../../components/consts/FlexDirection";
+import {justify} from "../../../components/consts/FlexJustify";
+import {align} from "../../../components/consts/FlexAlign";
+import {AppContext} from "../../../components/context/appContext";
+import {maxProductPerPage} from "../../../components/consts/default";
+import {productsHelper} from "../filters/productsHelper";
+import {getAllProducts} from "../../../components/consts/API";
 import {ProductPopup} from "./product-popup";
-import {Controls} from "./controls";
-import {FlexItem} from "./flexitem";
+import {Pagination} from "../pagination/pagination";
+import {FlexItem} from "../../../components/flexitem";
 
 export const Products = () => {
-    const {page, basket, sort, category, priceRange} = useContext(FiltersContext);
+    const {page, basket, sort, category, priceRange} = useContext(AppContext);
     const [popup, showPopup] = useState(false);
     const [loaded, setLoaded] = useState(false);
     const [product, setProduct] = useState({});
@@ -53,7 +53,7 @@ export const Products = () => {
 
     return (
         <div className={"productsWrapper"}>
-            <Controls items={items.length}/>
+            <Pagination items={items.length}/>
             <FlexItem className={"productContainer"}
                       flexDirection={direction.ROW}
                       justifyContent={justify.FLEX_START}
@@ -73,7 +73,7 @@ export const Products = () => {
                 {popup && <ProductPopup product={product}
                                         showPopup={showPopup}/>}
             </FlexItem>
-            <Controls items={items.length}/>
+            <Pagination items={items.length}/>
         </div>
     )
 };

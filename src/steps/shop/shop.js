@@ -1,17 +1,17 @@
 import React from 'react';
-import {Slider} from "./slider";
-import {mainSlider} from "./consts/mainSlider";
-import {FlexItem} from "./flexitem";
-import {direction} from "./consts/FlexDirection";
-import {justify} from "./consts/FlexJustify";
-import {align} from "./consts/FlexAlign";
+import {Slider} from "./slider/slider";
+import {sliderData} from "./slider/sliderData";
+import {FlexItem} from "../../components/flexitem";
+import {direction} from "../../components/consts/FlexDirection";
+import {justify} from "../../components/consts/FlexJustify";
+import {align} from "../../components/consts/FlexAlign";
 import {Filters} from "./filters";
-import {Products} from "./products-container";
+import {Products} from "./products/products-container";
 
 export const Shop = () => {
     return (
         <>
-            <Slider slides={mainSlider}/>
+            <Slider slides={sliderData}/>
             <FlexItem flexDirection={direction.ROW}
                       justifyContent={justify.SPACE_BETWEEN}
                       alignItems={align.FLEX_START}

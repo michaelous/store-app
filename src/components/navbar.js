@@ -1,16 +1,16 @@
 import React, {useContext, useState, useEffect} from 'react';
 import cartImg from './images/cart.png'
 import logo from './images/maison.png'
-import {FiltersContext} from "./AppContext";
+import {AppContext} from "./context/appContext";
 import {NavLink} from "react-router-dom";
 import {FlexItem} from "./flexitem";
-import {Cart} from "./cart";
+import {MiniCart} from "./miniCart";
 
 export const Navbar = () => {
     const url = 'https://michaelous.github.io/store-app';
     const [scroll, setScroll] = useState(false);
     const [cart, setCart] = useState(false);
-    const {basket} = useContext(FiltersContext);
+    const {basket} = useContext(AppContext);
     const quantity = basket.length;
     const showCart = () => setCart(!cart);
 
@@ -38,8 +38,8 @@ export const Navbar = () => {
                 </nav>
             </FlexItem>
 
-            <Cart cart={cart}
-                  setCart={setCart}/>
+            <MiniCart cart={cart}
+                      setCart={setCart}/>
         </>
     )
 };

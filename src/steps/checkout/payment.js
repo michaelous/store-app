@@ -1,18 +1,18 @@
 import React, {useContext} from 'react';
-import {FiltersContext} from "./AppContext";
-import {justify} from "./consts/FlexJustify";
-import {direction} from "./consts/FlexDirection";
-import {FlexItem} from "./flexitem";
-import shipmentSign from "./images/delivery.png";
-import returnSign from "./images/return.png";
-import payment from "./images/pay.png";
-import {productsHelper} from "./filters/productsHelper";
+import {AppContext} from "../../components/context/appContext";
+import {justify} from "../../components/consts/FlexJustify";
+import {direction} from "../../components/consts/FlexDirection";
+import {FlexItem} from "../../components/flexitem";
+import shipmentSign from "../../components/images/delivery.png";
+import returnSign from "../../components/images/return.png";
+import payment from "../../components/images/pay.png";
+import {productsHelper} from "../shop/filters/productsHelper";
 import {Tile} from "./tile.js";
 import {Form} from "./react-form";
 
 
 export const Payment = () => {
-    const {basket} = useContext(FiltersContext);
+    const {basket} = useContext(AppContext);
 
     return (
         <div className={"paymentFinal"}>
@@ -33,7 +33,6 @@ export const Payment = () => {
                     <p>delivery</p>
                     <p>free</p>
                 </FlexItem>
-
 
                 <Form/>
 

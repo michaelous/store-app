@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {defaultCategory, defaultPriceRange, defaultSort, initialPage} from "./consts/default";
-import {FiltersContext} from "./AppContext";
+import {AppContext} from "./context/appContext";
 import {Newsletter} from "./newsletter";
 import {Navbar} from "./navbar";
 import {Footer} from "./footer";
-import {Shop} from "./shop";
-import {Elements} from "./elements";
-import {Checkout} from "./checkout";
+import {Shop} from "../steps/shop/shop";
+import {Elements} from "../steps/elements/elements";
+import {Checkout} from "../steps/checkout/checkout";
 import {localStorageUtil} from "./storage/localStorage";
 
-export const Wrapper = () => {
+export const RouteContext = () => {
     const [sort, setSort] = useState(defaultSort);
     const [page, setPage] = useState(initialPage);
     const [category, setCategory] = useState(defaultCategory);
@@ -27,7 +27,7 @@ export const Wrapper = () => {
     };
 
     return (
-        <FiltersContext.Provider value={combinedFilters}>
+        <AppContext.Provider value={combinedFilters}>
             <Router>
                 <Navbar/>
                 <Switch>
@@ -38,7 +38,7 @@ export const Wrapper = () => {
             </Router>
             <Newsletter/>
             <Footer/>
-        </FiltersContext.Provider>
+        </AppContext.Provider>
     )
 };
 

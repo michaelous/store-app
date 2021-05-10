@@ -2,13 +2,13 @@ import React, {useContext} from 'react';
 import {localStorageUtil} from "./storage/localStorage";
 import {FlexItem} from "./flexitem";
 import {NavLink} from "react-router-dom";
-import {FiltersContext} from "./AppContext";
+import {AppContext} from "./context/appContext";
 import {justify} from "./consts/FlexJustify";
 import {align} from "./consts/FlexAlign";
-import {productsHelper} from "./filters/productsHelper";
+import {productsHelper} from "../steps/shop/filters/productsHelper";
 
-export const Cart = ({cart, setCart}) => {
-    const {basket, setBasket} = useContext(FiltersContext);
+export const MiniCart = ({cart, setCart}) => {
+    const {basket, setBasket} = useContext(AppContext);
 
     const removeHandler = (product) => {
         return (event) => {

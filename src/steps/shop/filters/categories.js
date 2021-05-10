@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
-import {categories} from "../consts/categories";
-import {FiltersContext} from "../AppContext";
+import {categories} from "../../../components/consts/categories";
+import {AppContext} from "../../../components/context/appContext";
 
 export const CategoryContainer = () => {
-    const {category, setCategory} = useContext(FiltersContext);
+    const {category, setCategory} = useContext(AppContext);
 
     const categoryHandler = (value) => {
         return (event) => {
