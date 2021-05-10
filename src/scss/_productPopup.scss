@@ -25,7 +25,7 @@
   .imgWrapper {
     max-width: 400px;
     width: 100%;
-    background: #f5f5f5;
+    background: $lightGrey;
 
     .imgPopup {
       height: 500px;
@@ -98,7 +98,7 @@
 
     .addToCart {
       cursor: pointer;
-      background: #ffdd7a;
+      background: $yellow;
       color: black;
       border: none;
       font-weight: bold;
@@ -132,7 +132,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f5f5f5;
+    background: $lightGrey;
     width: 22px;
     cursor: pointer;
     font-weight: bold;

@@ -5,7 +5,7 @@
 
   .checkoutHeader {
     width: 100%;
-    background: #f5f5f5;
+    background: $lightGrey;
     padding: 60px 15% 60px 15%;
     font-size: 25px;
   }
@@ -17,7 +17,7 @@
     align-items: flex-start;
     padding: 70px 0 70px 0;
     position: relative;
-    background: #f5f5f5;
+    background: $lightGrey;
     min-height: 500px;
 
     @media (min-width: 1080px) {

@@ -24,11 +24,19 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    width: 60%;
     height: 100%;
+    width: 100%;
 
     .logo {
-      margin-right: 300px;
+      margin-left: 16px;
+    }
+
+    @media (min-width: $screen-lg) {
+      width: 60%;
+
+      .logo {
+        margin-right: 300px;
+      }
     }
 
     .navigation {
@@ -42,10 +50,14 @@
         text-transform: capitalize;
         font-size: 16px;
         letter-spacing: 0.6px;
-        margin: 0 25px 0 25px;
+        margin: 0 16px 0 16px;
         position: relative;
-        color: #707175;
+        color: $navItem;
         text-decoration: none;
+
+        @media (min-width: $screen-lg) {
+          margin: 0 25px 0 25px;
+        }
 
         &:hover, &.active {
           color: black;
@@ -58,7 +70,7 @@
             bottom: 0;
             left: -10%;
             z-index: -1;
-            background: #ffdd7a;
+            background: $yellow;
           }
         }
       }
@@ -81,7 +93,7 @@
       }
 
       .quantity {
-        background: #ffdd7a;
+        background: $yellow;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -56,7 +56,7 @@ export const Products = () => {
             <Pagination items={items.length}/>
             <FlexItem className={"productContainer"}
                       flexDirection={direction.ROW}
-                      justifyContent={justify.FLEX_START}
+                      justifyContent={justify.CENTER}
                       alignItems={align.CENTER}>
                 {paginate(items, maxProductPerPage, page).map((item, index) => {
                     return <div onClick={productHandler(item.name)}

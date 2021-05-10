@@ -1,6 +1,6 @@
 .slideWrapper {
   height: 100vh;
-  background: #f5f5f5;
+  background: $lightGrey;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,8 @@
     width: 30px;
     height: 42px;
     position: absolute;
-    left: calc(50% - 5px);
+    left: calc(50% - 12px);
+    //left: calc(50% - 5px);
     bottom: 10px;
 
     path {
@@ -66,36 +67,62 @@
     }
 
     .slideText {
-      top: 42%;
-      left: 60%;
+      width: 300px;
+      align-items: center;
+      right: calc(50% - 150px);
+      bottom: 18%;
       font-size: 24px;
+      text-align: center;
       font-weight: bold;
-      max-width: 270px;
+
+      @media (min-width: $screen-lg) {
+        top: 42%;
+        left: 60%;
+        max-width: 270px;
+        text-align: left;
+        bottom: 20%;
+      }
     }
 
     .currentSlide {
+      display: none;
       font-size: 20px;
       top: 85%;
       left: 78%;
+      @media (min-width: $screen-lg) {
+        display: flex;
+      }
     }
   }
 
-  .slide:nth-of-type(1) {
-    //background-position: 25% 19%;
-    //background-size: 72vh;
 
-    background-position: 25% 0%;
-    background-size: 90vh;
+  .slide:nth-of-type(1) {
+    background-size: calc(300px + 55vw);
+    background-position: 35% 0;
+
+    @media (min-width: $screen-lg) {
+      background-size: 90vh;
+    }
+
   }
 
   .slide:nth-of-type(2) {
-    background-position: 25% 0%;
-    background-size: 70vh;
+    background-position: 50% 0;
+    background-size: calc(120px + 45vw);
+
+    @media (min-width: $screen-lg) {
+      background-position: 25% 0;
+      background-size: 70vh;
+    }
   }
 
   .slide:nth-of-type(3) {
-    background-position: 35% 50%;
-    background-size: 60vh;
+    background-size: calc(100px + 45vw);
+    background-position: 68% 52%;
+    @media (min-width: $screen-lg) {
+      background-position: 35% 50%;
+      background-size: 60vh;
+    }
   }
 
 
@@ -109,36 +136,34 @@
     z-index: 10;
     cursor: pointer;
     user-select: none;
-    background-size: 30px 30px;
+    background-position: center;
+    background-size: 19px 19px;
     background-repeat: no-repeat;
+    @media (min-width: $screen-lg) {
+      background-size: 24px 24px;
+    }
   }
 
   .right-arrow {
-    right: 10%;
+    right: 2%;
     background-image: url(https://image.flaticon.com/icons/svg/271/271228.svg);
+    @media (min-width: $screen-lg) {
+      right: 10%;
+    }
   }
 
   .left-arrow {
-    left: 10%;
+    left: 2%;
     background-image: url(https://image.flaticon.com/icons/svg/271/271220.svg);
+    @media (min-width: $screen-lg) {
+      left: 10%;
+    }
   }
 
-  .slideContainer {
-    background-repeat: no-repeat;
-    height: 500px;
-    width: 1000px;
-    border: 1px solid red;
-    background-position: 25% 0;
-    background-size: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   .slide {
     opacity: 0;
     transform-origin: top;
-    transition-duration: 1s all ease;
   }
 
   .slide.active {
