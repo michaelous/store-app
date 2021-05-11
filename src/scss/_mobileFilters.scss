@@ -1,0 +1,38 @@
+.sidebarMobile {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  .priceInputContainer {
+    display: flex;
+    overflow: hidden;
+
+    input {
+      padding: 4px;
+      max-width: 44%;
+      width: 100%;
+
+      &:first-of-type {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  > div {
+    width: 30%;
+
+    p {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  }
+
+  .categories, .sortContainer {
+    padding: 0;
+
+    select {
+      width: 100%;
+      padding: 6px;
+    }
+  }
+}

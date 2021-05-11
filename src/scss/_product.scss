@@ -18,13 +18,17 @@
   position: relative;
   width: 100%;
 
-  @media (min-width: 992px) {
+  @media (min-width: $screen-lg) {
     margin: 14px 0 0 0;
   }
 
   .product, .product img {
     width: calc(50px + 30vw);
-    @media (min-width: 992px) {
+    @media (min-width: $screen-xs) {
+      width: calc(68px + 30vw);
+    }
+
+    @media (min-width: $screen-lg) {
       height: 500px;
       width: 400px;
     }

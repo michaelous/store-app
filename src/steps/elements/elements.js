@@ -10,8 +10,8 @@ import {Perks} from "./perk";
 export const Elements = () => {
     return (
         <FlexItem flexDirection={direction.COLUMN}
-                  justify={justify.CENTER}
-                  align={align.CENTER}
+                  justifyContent={justify.CENTER}
+                  alignItems={align.CENTER}
                   className={"elementsWrapper"}>
             <h1 className={"elementsHeader"}>Elements</h1>
 

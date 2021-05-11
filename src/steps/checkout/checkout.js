@@ -22,8 +22,8 @@ export const Checkout = () => {
 
     return (
         <FlexItem flexDirection={direction.COLUMN}
-                  justify={justify.CENTER}
-                  align={align.CENTER}
+                  justifyContent={justify.CENTER}
+                  alignItems={align.CENTER}
                   className={"checkoutWrapper"}>
             <h1 className={"checkoutHeader"}>Checkout</h1>
 

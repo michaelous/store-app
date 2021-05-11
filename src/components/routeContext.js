@@ -9,6 +9,7 @@ import {Shop} from "../steps/shop/shop";
 import {Elements} from "../steps/elements/elements";
 import {Checkout} from "../steps/checkout/checkout";
 import {localStorageUtil} from "./storage/localStorage";
+import {useMediaQuery} from 'react-responsive'
 
 export const RouteContext = () => {
     const [sort, setSort] = useState(defaultSort);
@@ -17,13 +18,15 @@ export const RouteContext = () => {
     const [priceRange, setPriceRange] = useState(defaultPriceRange);
     const basketData = localStorageUtil.getDataByKey('basket') || [];
     const [basket, setBasket] = useState(basketData);
+    const isMobile = useMediaQuery({query: '(max-width: 992px)'});
 
     const combinedFilters = {
+        isMobile,
         page, setPage,
         sort, setSort,
         basket, setBasket,
         category, setCategory,
-        priceRange, setPriceRange,
+        priceRange, setPriceRange
     };
 
     return (

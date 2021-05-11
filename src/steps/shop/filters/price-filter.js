@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import Slider, {createSliderWithTooltip} from "rc-slider";
 import {AppContext} from "../../../components/context/appContext";
+import 'rc-slider/assets/index.css';
 
 export const PriceFilter = () => {
     const {priceRange, setPriceRange} = useContext(AppContext);
