@@ -29,7 +29,6 @@
     height: 42px;
     position: absolute;
     left: calc(50% - 12px);
-    //left: calc(50% - 5px);
     bottom: 10px;
 
     path {
@@ -70,7 +69,7 @@
       width: 300px;
       align-items: center;
       right: calc(50% - 150px);
-      bottom: 18%;
+      bottom: 24%;
       font-size: 24px;
       text-align: center;
       font-weight: bold;
@@ -118,7 +117,7 @@
 
   .slide:nth-of-type(3) {
     background-size: calc(100px + 45vw);
-    background-position: 68% 52%;
+    background-position: 68% 42%;
     @media (min-width: $screen-lg) {
       background-position: 35% 50%;
       background-size: 60vh;

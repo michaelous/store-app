@@ -13,86 +13,112 @@
 
 .productPopup {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   background: white;
   position: absolute;
   border: 2px solid black;
-  height: 500px;
-  width: 800px;
-  top: 20%;
+  overflow: hidden;
+  max-width: 90%;
+
+  @media (min-width: $screen-md) {
+    justify-content: center;
+    flex-direction: row;
+    height: 500px;
+    width: 700px;
+    top: 20%;
+  }
+
+  @media (min-width: $screen-lg) {
+    width: 800px;
+  }
 
   .imgWrapper {
-    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: auto;
     background: $lightGrey;
+    @media (min-width: $screen-md) {
+      max-width: 400px;
+      height: 100%;
+      width: 100%;
+    }
 
     .imgPopup {
-      height: 500px;
-      max-width: 400px;
-      width: 100%;
+      width: 40vw;
+      height: auto;
+
+      @media (min-width: $screen-md) {
+        height: auto;
+        max-width: 400px;
+        width: 100%;
+      }
     }
   }
 
   .productDetails {
-    padding: 50px 20px 90px 20px;
-    max-width: 360px;
+    font-size: 4.5vw;
+    box-sizing: border-box;
+    padding: 10vw 4vw 15vw 4vw;
     width: 100%;
+    @media (min-width: $screen-xs) {
+      padding: 50px 20px 90px 20px;
+    }
 
     .productName {
-      font-size: 40px;
+      font-size: 3.5vw;
       font-weight: bold;
+
+      @media (min-width: $screen-sm) {
+        font-size: 3.5vw;
+      }
+
+      @media (min-width: $screen-md) {
+        font-size: 30px;
+      }
     }
 
     .productPrice {
-      font-size: 30px;
+      font-size: 3.5vw;
       font-weight: bold;
       color: grey;
+
+      @media (min-width: $screen-sm) {
+        font-size: 2.5vw;
+      }
+      @media (min-width: $screen-md) {
+        font-size: 30px;
+      }
     }
 
     .productCategory {
+      font-size: 3.5vw;
       font-weight: bold;
       padding: 20px 0 20px 0;
+
+      @media (min-width: $screen-sm) {
+        font-size: 2.5vw;
+      }
+      @media (min-width: $screen-md) {
+        font-size: 16px;
+      }
     }
 
     .productDescription {
-      padding: 30px 0 30px 0;
+      font-size: 3.5vw;
+      padding: 2vw 0 2vw 0;
       border-top: 1px solid black;
       color: black;
-      font-size: 16px;
       text-align: justify;
-    }
 
-
-    fieldset {
-      max-width: 11rem;
-      padding: 0;
-      margin: 10px 0;
-      border: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-
-      input {
-        width: 100%;
-        height: 20px;
-        text-align: center;
-        padding: 0;
+      @media (min-width: $screen-sm) {
+        font-size: 2.5vw;
       }
-
-      button {
-        border: solid 1px #555;
-        color: #000;
-        cursor: pointer;
-        line-height: 2;
-        margin: 0 2px 0 2px;
-        padding: 0;
-        height: 24px;
-        width: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      @media (min-width: $screen-md) {
+        font-size: 16px;
+        padding: 30px 0 30px 0;
       }
     }
 
@@ -103,9 +129,17 @@
       border: none;
       font-weight: bold;
       position: absolute;
-      bottom: 30px;
-      padding: 10px 25px 10px 10px;
+      padding: 2vw 3vw 2vw 3vw;
       transition: padding 0.5s;
+      font-size: 3.5vw;
+
+      @media (min-width: $screen-sm) {
+        font-size: 2.5vw;
+      }
+      @media (min-width: $screen-md) {
+        font-size: 14px;
+        padding: 10px 25px 10px 10px;
+      }
 
 
       &.added {
@@ -122,7 +156,7 @@
           border-right: 4px solid #78b13f;
           left: 85%;
           position: absolute;
-          top: 9px;
+          top: calc(50% - 10px);
         }
       }
     }

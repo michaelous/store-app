@@ -28,7 +28,13 @@
     width: 100%;
 
     .logo {
+      max-width: 45px;
+      width: 100%;
       margin-left: 16px;
+
+      @media (min-width: $screen-md) {
+        max-width: 51px;
+      }
     }
 
     @media (min-width: $screen-lg) {
