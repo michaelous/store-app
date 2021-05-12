@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/store-app/static/css/main.5706552a.chunk.css",
+    "main.css": "/store-app/static/css/main.75663ab6.chunk.css",
     "main.js": "/store-app/static/js/main.47e75b79.chunk.js",
     "main.js.map": "/store-app/static/js/main.47e75b79.chunk.js.map",
     "runtime-main.js": "/store-app/static/js/runtime-main.b47e8339.js",
@@ -10,7 +10,7 @@
     "static/js/2.4af4d311.chunk.js.map": "/store-app/static/js/2.4af4d311.chunk.js.map",
     "index.html": "/store-app/index.html",
     "static/css/2.d59c41ec.chunk.css.map": "/store-app/static/css/2.d59c41ec.chunk.css.map",
-    "static/css/main.5706552a.chunk.css.map": "/store-app/static/css/main.5706552a.chunk.css.map",
+    "static/css/main.75663ab6.chunk.css.map": "/store-app/static/css/main.75663ab6.chunk.css.map",
     "static/js/2.4af4d311.chunk.js.LICENSE.txt": "/store-app/static/js/2.4af4d311.chunk.js.LICENSE.txt",
     "static/media/arrow.02216e31.svg": "/store-app/static/media/arrow.02216e31.svg",
     "static/media/app.scss": "/store-app/static/media/checked.45da635f.png",
@@ -29,7 +29,7 @@
     "static/js/runtime-main.b47e8339.js",
     "static/css/2.d59c41ec.chunk.css",
     "static/js/2.4af4d311.chunk.js",
-    "static/css/main.5706552a.chunk.css",
+    "static/css/main.75663ab6.chunk.css",
     "static/js/main.47e75b79.chunk.js"
   ]
 }
