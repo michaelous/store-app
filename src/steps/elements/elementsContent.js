@@ -10,7 +10,7 @@ export const elementsContent = [
     },
     {
         image: home2,
-        header: 'Lounge collection',
+        header: 'Lounge',
         subheader: 'Photography'
     },
     {

@@ -152,8 +152,8 @@
           transform: rotate(45deg);
           height: 9px;
           width: 5px;
-          border-bottom: 4px solid #78b13f;
-          border-right: 4px solid #78b13f;
+          border-bottom: 4px solid $checked;
+          border-right: 4px solid $checked;
           left: 85%;
           position: absolute;
           top: calc(50% - 10px);

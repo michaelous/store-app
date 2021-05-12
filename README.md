@@ -7,6 +7,5 @@ React Router <br>
 Local Storage <br>
 Context API
 
-*Working on: RWD <br>
 <br>
 Live: https://michaelous.github.io/store-app

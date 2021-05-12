@@ -14,11 +14,16 @@
     width: 100%;
     display: flex;
     margin: 0 auto;
-    max-width: 70vw;
+    max-width: 90vw;
     padding-top: 70px;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
+    @media (min-width: $screen-md) {
+      flex-direction: row;
+      max-width: 70vw;
+    }
 
     .flexItem {
       display: flex;
@@ -30,31 +35,50 @@
     }
 
     .perkHeader {
-      font-size: 25px;
+      font-size: 18px;
       font-weight: 600;
-      line-height: 40px;
+      line-height: 24px;
       font-family: sans-serif;
       text-transform: capitalize;
+
+      @media (min-width: $screen-xxl) {
+        font-size: 25px;
+        line-height: 40px;
+      }
     }
 
     .perksList {
-      margin-left: 100px;
+      //display: none;
+      margin-left: 35px;
+      @media (min-width: $screen-xxl) {
+        display: flex;
+        margin-left: 100px;
+      }
 
       .perk {
         position: relative;
-        line-height: 30px;
-        font-size: 16px;
+        line-height: 20px;
+        font-size: 14px;
+
+        @media (min-width: $screen-xxl) {
+          line-height: 30px;
+          font-size: 16px;
+        }
 
         &:before {
           background-image: url(../components/images/checked.png);
           content: " ";
           position: absolute;
           left: -23px;
-          top: 9px;
+          top: 5px;
           height: 10px;
           width: 13px;
           display: block;
           background-size: cover;
+
+          @media (min-width: $screen-xxl) {
+            top: 9px;
+          }
         }
       }
     }
@@ -66,9 +90,12 @@
     justify-content: center;
     align-items: center;
     padding-top: 70px;
-    max-width: 70vw;
+    max-width: 100vw;
     margin: 0 auto;
     width: 100%;
+    @media (min-width: $screen-md) {
+      max-width: 70vw;
+    }
 
     .element {
       display: flex;
@@ -84,8 +111,12 @@
       cursor: crosshair;
       position: relative;
       overflow: hidden;
-      margin: 10px;
+      margin: 5px;
       width: 100%;
+
+      @media (min-width: $screen-md) {
+        margin: 10px;
+      }
 
       .textWrapper {
         width: 100%;
@@ -94,13 +125,21 @@
 
         .elementHeader {
           padding: 10px 0 10px 0;
-          font-size: 25px;
+          font-size: 3vw;
           opacity: 0;
+
+          @media (min-width: $screen-md) {
+            font-size: 25px;
+          }
         }
 
         .elementSubheader {
-          font-size: 18px;
+          font-size: 2vw;
           opacity: 0;
+
+          @media (min-width: $screen-md) {
+            font-size: 18px;
+          }
         }
       }
 

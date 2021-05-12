@@ -12,27 +12,53 @@
 
   .checkoutInner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 70px 0 70px 0;
     position: relative;
     background: $lightGrey;
     min-height: 500px;
+    margin-top: 10px;
 
-    @media (min-width: 1080px) {
+    @media (min-width: $screen-xl) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 70%;
+      margin: 100px auto;
+    }
+
+    @media (min-width: $screen-xl) {
       max-width: 70%;
       margin: 100px auto;
     }
 
     .checkoutProductList {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      @media (min-width: $screen-xl) {
+        align-items: flex-end;
+        max-width: 50%;
+        margin: 0 10px 0 10px;
+      }
+
       .product {
         display: flex;
         flex-direction: row;
         padding: 10px;
         background: white;
-        width: 500px;
-        margin: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 10px;
+
+        @media (min-width: $screen-sm) {
+          max-width: 500px;
+        }
 
         .productImgCart {
           max-height: 148px;
@@ -89,25 +115,46 @@
       align-items: center;
       overflow: hidden;
       box-sizing: content-box;
-      max-width: 500px;
-      margin: 5px;
+      margin: 10px 0 5px 0;
       width: 100%;
+
+      @media (min-width: $screen-sm) {
+        max-width: 500px;
+      }
+
+      @media (min-width: $screen-xl) {
+        max-width: 100%;
+        align-items: flex-start;
+        margin: 10px 10px 0 10px;
+      }
 
       p:first-child {
         font-weight: bold;
       }
 
-      .delivery, .returns {
+      @media (min-width: $screen-xl) {
+        .delivery, .total {
+          max-width: 500px;
+        }
+      }
+
+
+      .delivery {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         box-sizing: border-box;
         width: 100%;
-        margin: 5px;
+        margin: 5px 0 5px 0;
         padding: 19px;
         background: white;
         position: relative;
+
+
+        @media (min-width: $screen-xl) {
+          margin: 5px 0 10px 0;
+        }
 
         p {
           font-size: 15px;
@@ -139,15 +186,22 @@
         }
       }
 
+
+      @media (min-width: $screen-xl) {
+        .delivery {
+          margin-top: 0;
+        }
+      }
+
+
       .total {
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
         background: white;
         overflow: hidden;
-        padding: 36px;
+        padding: 30px 25px 30px 25px;
         width: 100%;
-        margin: 5px;
 
         .totalHeader {
           font-weight: bold;

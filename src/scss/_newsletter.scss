@@ -46,7 +46,7 @@
   .newsletterEmail {
     box-sizing: border-box;
     width: 180px;
-    height: 40px;
+    height: 34px;
     border: 3px solid #eeeeee;
     padding-left: 10px;
 
@@ -63,12 +63,12 @@
 
   .newsletterSubmit {
     box-sizing: border-box;
-    height: 40px;
+    height: 34px;
     border: 2px solid #bbbbbb;
     background: white;
     text-align: center;
     color: black;
-    font-size: 16px;
+    font-size: 14px;
     -webkit-transition: 0.3s all ease-out;
     transition: 0.3s all ease-out;
     cursor: pointer;
@@ -78,6 +78,7 @@
       border: 3px solid #bbbbbb;
     }
     @media (min-width: $screen-xxl) {
+      font-size: 16px;
       width: 170px;
       height: 50px;
     }

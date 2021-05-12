@@ -15,7 +15,7 @@ export const Newsletter = () => {
             <p className="discount">Get Discount 35% off</p>
             <form className="inputContainer">
                 <input className="newsletterEmail" id="email" placeholder="Your email"/>
-                <button onClick={popupHandler('test')} type="button" id="send" className="newsletterSubmit">Send
+                <button onClick={popupHandler('@')} type="button" id="send" className="newsletterSubmit">submit
                 </button>
             </form>
         </div>
