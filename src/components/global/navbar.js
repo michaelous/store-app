@@ -1,7 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react';
-import cartImg from './images/cart.png'
-import logo from './images/maison.png'
-import {AppContext} from "./context/appContext";
+import cartImg from '../images/cart.png'
+import logo from '../images/maison.png'
+import {AppContext} from "../context/appContext";
 import {NavLink} from "react-router-dom";
 import {FlexItem} from "./flexitem";
 import {MiniCart} from "./miniCart";

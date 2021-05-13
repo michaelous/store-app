@@ -1,5 +1,5 @@
 import React from "react";
-import {RouteContext} from "./components/routeContext";
+import {RouteContext} from "./components/global/routeContext";
 import './app.scss';
 
 function App() {

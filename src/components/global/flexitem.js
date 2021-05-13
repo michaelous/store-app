@@ -1,7 +1,7 @@
 import * as React from "react";
-import {justify} from "./consts/FlexJustify";
-import {align} from "./consts/FlexAlign";
-import {direction} from "./consts/FlexDirection";
+import {justify} from "../consts/FlexJustify";
+import {align} from "../consts/FlexAlign";
+import {direction} from "../consts/FlexDirection";
 
 export class FlexItem extends React.Component {
     static defaultProps = {

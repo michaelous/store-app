@@ -1,5 +1,5 @@
 import React from 'react'
-import {FlexItem} from "../../components/flexitem";
+import {FlexItem} from "../../components/global/flexitem";
 import {justify} from "../../components/consts/FlexJustify";
 import {align} from "../../components/consts/FlexAlign";
 import {direction} from "../../components/consts/FlexDirection";

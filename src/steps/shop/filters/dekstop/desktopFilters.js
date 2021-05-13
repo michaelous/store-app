@@ -5,7 +5,7 @@ import {SortFilter} from "../sort-filter";
 import {align} from "../../../../components/consts/FlexAlign";
 import {justify} from "../../../../components/consts/FlexJustify";
 import {direction} from "../../../../components/consts/FlexDirection";
-import {FlexItem} from "../../../../components/flexitem";
+import {FlexItem} from "../../../../components/global/flexitem";
 
 export const DesktopFilters = () => {
     return (

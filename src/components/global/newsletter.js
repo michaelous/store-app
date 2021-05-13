@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import gift from "./images/gift.svg"
+import gift from "../images/gift.svg"
 
 export const Newsletter = () => {
     const [email] = useState();

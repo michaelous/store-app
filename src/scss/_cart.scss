@@ -2,150 +2,100 @@
   width: 0;
   height: 0;
   overflow: hidden;
-}
-
-
-.cart-wrapper.active {
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: width 250ms;
-  padding: 15px 0 15px 0;
-  overflow: hidden;
-  box-shadow: -20px 0px 57px 2000px rgba(0, 0, 0, 0.35);
-  background-color: rgba(0, 0, 0, 0.4);
-
-  .cartHeader {
-    font-weight: bold;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .totalContainer {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px solid $cartBorder;
-    background: white;
-    width: 100%;
-
-    .totalHeader {
-      padding: 10px;
-      font-weight: bold;
-    }
-
-    .checkoutBtn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      background: black;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      color: white;
-      height: 35px;
-      width: 100%;
-      border: none;
-    }
-  }
-
-  .closeCart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $lightGrey;
-    width: 22px;
-    cursor: pointer;
-    font-weight: bold;
-    border: none;
-    font-size: 20px;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
 
   .inside-cart {
-    transition: 350ms;
+    width: 0;
+    overflow: hidden;
+  }
+
+  &.active {
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 250ms;
     padding: 15px 0 15px 0;
     overflow: hidden;
-    background: white;
-    visibility: visible;
-    right: 0;
-    top: 0;
-    height: 100%;
-    box-sizing: border-box;
-    position: fixed;
-    width: 100%;
-    @media (min-width: $screen-lg) {
-      width: 400px;
-    }
+    box-shadow: -20px 0px 57px 2000px rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.4);
 
-    .productCartWrapper {
-      display: flex;
-      position: relative;
-      height: 120px;
-      padding: 20px 0 20px 0;
+    .inside-cart {
+      transition: 350ms;
+      padding: 0 0 15px 0;
+      overflow: hidden;
+      background: white;
+      visibility: visible;
+      right: 0;
+      top: 0;
+      height: 100%;
+      box-sizing: border-box;
+      position: fixed;
+      width: 100%;
 
-      &:after {
-        display: block;
-        content: '';
-        width: 100%;
-        height: 1px;
-        background: $cartBorder;
+      @media (min-width: $screen-lg) {
+        width: 400px;
+      }
+
+
+      .cartHeader {
+        font-weight: bold;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .closeCart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $lightGrey;
+        width: 22px;
+        cursor: pointer;
+        font-weight: bold;
+        border: none;
+        font-size: 20px;
+        position: relative;
+        left: 95%;
+        top: 0;
+      }
+
+      .totalContainer {
         position: absolute;
         bottom: 0;
-        left: 0;
-      }
-
-      .productImgCart {
-        padding: 10px;
-        height: 100%;
-      }
-
-      .productDetails {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        width: 60%;
-        padding: 10px;
-        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid $cartBorder;
+        background: white;
+        overflow: hidden;
+        width: 100%;
 
-        .removeBtn {
-          position: absolute;
-          background: white;
-          border: 2px solid $cartBorder;
-          outline: none;
+        .totalHeader {
+          padding: 10px;
+          font-weight: bold;
+        }
+
+        .checkoutBtn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          background: black;
           cursor: pointer;
-          bottom: 10px;
-          right: 10px;
-        }
-
-        .productName {
-          font-size: 18px;
-        }
-
-        .productQty {
           font-size: 16px;
-        }
-
-        .productPrice {
-          font-size: 16px;
+          font-weight: bold;
+          color: white;
+          height: 35px;
+          width: 100%;
+          border: none;
         }
       }
     }
-
-
   }
 }
 

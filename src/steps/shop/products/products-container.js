@@ -8,7 +8,7 @@ import {productsHelper} from "../filters/productsHelper";
 import {getAllProducts} from "../../../components/consts/API";
 import {ProductPopup} from "./product-popup";
 import {Pagination} from "../pagination/pagination";
-import {FlexItem} from "../../../components/flexitem";
+import {FlexItem} from "../../../components/global/flexitem";
 
 export const Products = () => {
     const {page, basket, sort, category, priceRange} = useContext(AppContext);

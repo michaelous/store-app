@@ -1,8 +1,8 @@
 import React from 'react';
-import {justify} from "./consts/FlexJustify";
-import {align} from "./consts/FlexAlign";
+import {justify} from "../consts/FlexJustify";
+import {align} from "../consts/FlexAlign";
 import {FlexItem} from "./flexitem";
-import logo from "./images/maison.png";
+import logo from "../images/maison.png";
 
 export const Footer = () => {
     return <div className={"footerWrapper"}>

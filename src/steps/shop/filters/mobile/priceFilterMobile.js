@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import {FlexItem} from "../../../../components/flexitem";
+import {FlexItem} from "../../../../components/global/flexitem";
 import {AppContext} from "../../../../components/context/appContext";
 import {direction} from "../../../../components/consts/FlexDirection";
 import {justify} from "../../../../components/consts/FlexJustify";

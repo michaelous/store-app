@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {FakeDescription} from "../../../components/consts/description";
 import {AppContext} from "../../../components/context/appContext";
 import {localStorageUtil} from "../../../components/storage/localStorage";
+import {CloseBtn} from "../../../components/styledComponents/closeButton";
 
 export const ProductPopup = ({product, showPopup}) => {
     const {basket, setBasket} = useContext(AppContext);
@@ -33,7 +34,7 @@ export const ProductPopup = ({product, showPopup}) => {
                     <button className={`addToCart ${itemInCart(product) ? 'added' : ''}`}
                             onClick={cartHandler(product)}>{itemInCart(product) ? 'Added To MiniCart ' : 'Add To MiniCart'}</button>
                 </div>
-                <button className={"closePopup"} onClick={() => showPopup(false)}>X</button>
+                <CloseBtn onClick={() => showPopup(false)}>X</CloseBtn>
             </div>
         </div>
     )

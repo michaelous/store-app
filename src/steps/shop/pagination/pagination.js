@@ -1,5 +1,5 @@
 import React, {useEffect, useContext, useState} from 'react';
-import {FlexItem} from "../../../components/flexitem";
+import {FlexItem} from "../../../components/global/flexitem";
 import {direction} from "../../../components/consts/FlexDirection";
 import {justify} from "../../../components/consts/FlexJustify";
 import {align} from "../../../components/consts/FlexAlign";

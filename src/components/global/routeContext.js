@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import {defaultCategory, defaultPriceRange, defaultSort, initialPage} from "./consts/default";
-import {AppContext} from "./context/appContext";
+import {defaultCategory, defaultPriceRange, defaultSort, initialPage} from "../consts/default";
+import {AppContext} from "../context/appContext";
 import {Newsletter} from "./newsletter";
 import {Navbar} from "./navbar";
 import {Footer} from "./footer";
-import {Shop} from "../steps/shop/shop";
-import {Elements} from "../steps/elements/elements";
-import {Checkout} from "../steps/checkout/checkout";
-import {localStorageUtil} from "./storage/localStorage";
+import {Shop} from "../../steps/shop/shop";
+import {Elements} from "../../steps/elements/elements";
+import {Checkout} from "../../steps/checkout/checkout";
+import {localStorageUtil} from "../storage/localStorage";
 import {useMediaQuery} from 'react-responsive'
 
 export const RouteContext = () => {
