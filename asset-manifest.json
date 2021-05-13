@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/store-app/static/css/main.75663ab6.chunk.css",
-    "main.js": "/store-app/static/js/main.47e75b79.chunk.js",
-    "main.js.map": "/store-app/static/js/main.47e75b79.chunk.js.map",
+    "main.css": "/store-app/static/css/main.3381b8e8.chunk.css",
+    "main.js": "/store-app/static/js/main.bfe4aa4b.chunk.js",
+    "main.js.map": "/store-app/static/js/main.bfe4aa4b.chunk.js.map",
     "runtime-main.js": "/store-app/static/js/runtime-main.b47e8339.js",
     "runtime-main.js.map": "/store-app/static/js/runtime-main.b47e8339.js.map",
     "static/css/2.d59c41ec.chunk.css": "/store-app/static/css/2.d59c41ec.chunk.css",
-    "static/js/2.4af4d311.chunk.js": "/store-app/static/js/2.4af4d311.chunk.js",
-    "static/js/2.4af4d311.chunk.js.map": "/store-app/static/js/2.4af4d311.chunk.js.map",
+    "static/js/2.1d931cb2.chunk.js": "/store-app/static/js/2.1d931cb2.chunk.js",
+    "static/js/2.1d931cb2.chunk.js.map": "/store-app/static/js/2.1d931cb2.chunk.js.map",
     "index.html": "/store-app/index.html",
     "static/css/2.d59c41ec.chunk.css.map": "/store-app/static/css/2.d59c41ec.chunk.css.map",
-    "static/css/main.75663ab6.chunk.css.map": "/store-app/static/css/main.75663ab6.chunk.css.map",
-    "static/js/2.4af4d311.chunk.js.LICENSE.txt": "/store-app/static/js/2.4af4d311.chunk.js.LICENSE.txt",
+    "static/css/main.3381b8e8.chunk.css.map": "/store-app/static/css/main.3381b8e8.chunk.css.map",
+    "static/js/2.1d931cb2.chunk.js.LICENSE.txt": "/store-app/static/js/2.1d931cb2.chunk.js.LICENSE.txt",
     "static/media/arrow.02216e31.svg": "/store-app/static/media/arrow.02216e31.svg",
     "static/media/app.scss": "/store-app/static/media/checked.45da635f.png",
     "static/media/delivery.b4aaa8c3.png": "/store-app/static/media/delivery.b4aaa8c3.png",
@@ -19,7 +19,6 @@
     "static/media/home1.c937d509.jpg": "/store-app/static/media/home1.c937d509.jpg",
     "static/media/home2.c4a36542.jpg": "/store-app/static/media/home2.c4a36542.jpg",
     "static/media/home3.e19e8a41.jpg": "/store-app/static/media/home3.e19e8a41.jpg",
-    "static/media/pay.05d8694a.png": "/store-app/static/media/pay.05d8694a.png",
     "static/media/return.2cb24d83.png": "/store-app/static/media/return.2cb24d83.png",
     "static/media/slide1.bb8e2a31.png": "/store-app/static/media/slide1.bb8e2a31.png",
     "static/media/slide2.9404e664.png": "/store-app/static/media/slide2.9404e664.png",
@@ -28,8 +27,8 @@
   "entrypoints": [
     "static/js/runtime-main.b47e8339.js",
     "static/css/2.d59c41ec.chunk.css",
-    "static/js/2.4af4d311.chunk.js",
-    "static/css/main.75663ab6.chunk.css",
-    "static/js/main.47e75b79.chunk.js"
+    "static/js/2.1d931cb2.chunk.js",
+    "static/css/main.3381b8e8.chunk.css",
+    "static/js/main.bfe4aa4b.chunk.js"
   ]
 }
