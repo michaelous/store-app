@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 import {AppContext} from "../context/appContext";
+import {CloseBtn} from "../styledComponents/closeButton";
 import {productsHelper} from "../../steps/shop/filters/productsHelper";
 import {ProductCart} from "./productCart";
 
@@ -26,7 +27,7 @@ export const MiniCart = ({cart, setCart}) => {
     return (
         <div className={cart ? 'cart-wrapper active' : 'cart-wrapper'}>
             <div className={"inside-cart"}>
-                <button className={"closeCart"} onClick={closeCart}>x</button>
+                <CloseBtn onClick={closeCart}>X</CloseBtn>
                 {cartHeader()}
                 {basket.map((value, index) => {
                     return <ProductCart product={value}

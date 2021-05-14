@@ -34,7 +34,7 @@ export const ProductPopup = ({product, showPopup}) => {
                     <button className={`addToCart ${itemInCart(product) ? 'added' : ''}`}
                             onClick={cartHandler(product)}>{itemInCart(product) ? 'Added To MiniCart ' : 'Add To MiniCart'}</button>
                 </div>
-                <CloseBtn onClick={() => showPopup(false)}>X</CloseBtn>
+                <CloseBtn size={'large'} onClick={() => showPopup(false)}>X</CloseBtn>
             </div>
         </div>
     )

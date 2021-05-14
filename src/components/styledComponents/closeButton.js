@@ -5,17 +5,17 @@ export const CloseBtn = styled.button`
     justify-content: center;
     align-items: center;
     background: #f5f5f5;
-    width: 24px;
     height: 24px;
     cursor: pointer;
     font-weight: bold;
     border: none;
     font-size: 19px;
     padding: 0 15px 0 15px;
-    border: 1px solid lightgrey;
     cursor: pointer;
     position: absolute;
     top: 0%;
-    left: calc(100% - 33px);
+    right: 0;
+    height: ${props => props.size === 'large' ? '24px' : '20px'};
+    width: ${props => props.size === 'large' ? '38px' : '18px'};
 `;
 

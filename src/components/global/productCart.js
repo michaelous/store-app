@@ -25,7 +25,7 @@ export const ProductCart = ({product, index}) => {
                 <p className={"productName"}>{product.name}</p>
                 <p className={"productQty"}>Quantity: 1</p>
                 <p className={"productPrice"}>${product.price}</p>
-                <RemoveBtn onClick={removeHandler(product.name)}>Remove</RemoveBtn>
+                <RemoveBtn size={'small'} onClick={removeHandler(product.name)}>Remove</RemoveBtn>
             </div>
         </FlexItem>
     )
