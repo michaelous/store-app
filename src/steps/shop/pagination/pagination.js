@@ -5,7 +5,7 @@ import {justify} from "../../../components/consts/FlexJustify";
 import {align} from "../../../components/consts/FlexAlign";
 import {AppContext} from "../../../components/context/appContext";
 import {maxProductPerPage} from "../../../components/consts/default";
-import arrow from "../../../components/images/arrow.svg"
+import {PageArrow} from "../../../components/styledComponents/pageArrow";
 
 export const Pagination = (quantity) => {
     const {page, setPage} = useContext(AppContext);
@@ -38,22 +38,18 @@ export const Pagination = (quantity) => {
     const pagination = () => {
         const moreThanOnePage = getNumberOfPages() > 1;
         return <ul className={"productsPagination"}>
-            {moreThanOnePage &&
-            <img className={`arrowControl arrowLeft ${page === 1 ? 'inactive' : ''}`}
-                 onClick={previousPage}
-                 src={arrow}
-                 alt={"arrow"}/>}
+            {moreThanOnePage && <PageArrow direction={'left'}
+                                           disabled={page === 1}
+                                           onClick={previousPage}/>}
 
             {[...Array(productsPerPage)].map((elementInArray, index) => (
                 <li key={index} className={`page ${page === (index + 1) ? 'current' : ''}`}
                     onClick={pageHandler(index + 1)}> {index + 1} </li>
             ))}
 
-            {moreThanOnePage &&
-            <img className={`arrowControl arrowRight ${page === getNumberOfPages() ? 'inactive' : ''}`}
-                 onClick={nextPage}
-                 src={arrow}
-                 alt={"arrow"}/>}
+            {moreThanOnePage && <PageArrow direction={'right'}
+                                           disabled={page === getNumberOfPages()}
+                                           onClick={nextPage}/>}
         </ul>
     };
 

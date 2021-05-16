@@ -17,8 +17,9 @@ export const CategoryContainer = () => {
             <p className={"sidebarHeader"}>Categories</p>
             <ul className={"categories"}>
                 {categories.map((value, index) => {
-                    return <li key={index} className={`category ${category === value ? 'active' : ''}`}
-                               onClick={categoryHandler(value)}>{value}</li>
+                    return <li key={index}
+                               className={`category ${category === value ? 'active' : ''}`}
+                               onClick={categoryHandler(value)}>{value} </li>
                 })}
             </ul>
         </div>
