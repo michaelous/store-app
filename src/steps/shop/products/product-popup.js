@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {FakeDescription} from "../../../components/consts/description";
 import {AppContext} from "../../../components/context/appContext";
-import {localStorageUtil} from "../../../components/storage/localStorage";
 import {CloseBtn} from "../../../components/styledComponents/closeButton";
+import {localStorageUtil} from "../../../components/storage/localStorage";
 
 export const ProductPopup = ({product, showPopup}) => {
     const {basket, setBasket} = useContext(AppContext);
@@ -12,10 +12,10 @@ export const ProductPopup = ({product, showPopup}) => {
     };
 
     const cartHandler = (product) => {
-        return (event) => {
+        return () => {
             if (!itemInCart(product)) {
-                setBasket([...basket, product], localStorageUtil.updateBasket([...basket, product]));
-                event.preventDefault();
+                setBasket([...basket, product]);
+                localStorageUtil.updateBasket([...basket, product])
             }
         }
     };
@@ -32,7 +32,9 @@ export const ProductPopup = ({product, showPopup}) => {
                     <p className={"productCategory"}>{product.category}</p>
                     <p className={"productDescription"}>{FakeDescription}</p>
                     <button className={`addToCart ${itemInCart(product) ? 'added' : ''}`}
-                            onClick={cartHandler(product)}>{itemInCart(product) ? 'Added To MiniCart ' : 'Add To MiniCart'}</button>
+                            onClick={cartHandler(product)}>
+                        {itemInCart(product) ? 'Added To MiniCart ' : 'Add To MiniCart'}
+                    </button>
                 </div>
                 <CloseBtn size={'large'} onClick={() => showPopup(false)}>X</CloseBtn>
             </div>

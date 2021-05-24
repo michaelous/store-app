@@ -7,16 +7,16 @@ import {align} from "../../../../components/consts/FlexAlign";
 
 export const PriceFilterMobile = () => {
     const {priceRange, setPriceRange} = useContext(AppContext);
+    const [min, max] = priceRange;
 
     const setMinPrice = (e) => {
-        (!isNaN(e.target.value)) && setPriceRange([Number(e.target.value), priceRange[1]]);
         e.preventDefault();
+        (!isNaN(e.target.value)) && setPriceRange([Number(e.target.value), max]);
     };
 
-
     const setMaxPrice = (e) => {
-        (!isNaN(e.target.value)) && setPriceRange([priceRange[0], Number(e.target.value)]);
         e.preventDefault();
+        (!isNaN(e.target.value)) && setPriceRange([min, Number(e.target.value)]);
     };
 
     return (
@@ -28,7 +28,6 @@ export const PriceFilterMobile = () => {
                       alignItems={align.CENTER}>
                 <input onChange={setMinPrice} placeholder={"Min"}/>
                 <input onChange={setMaxPrice} placeholder={"Max"}/>
-
             </FlexItem>
         </div>)
 };

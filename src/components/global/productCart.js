@@ -9,11 +9,11 @@ import {RemoveBtn} from "../styledComponents/removeButton";
 export const ProductCart = ({product, index}) => {
     const {basket, setBasket} = useContext(AppContext);
 
-    const removeHandler = (product) => {
-        return (event) => {
-            let remove = basket.filter((character) => character.name !== product);
-            setBasket(remove, localStorageUtil.updateBasket(remove));
-            event.preventDefault();
+    const removeHandler = ({name}) => {
+        const remove = basket.filter(product => product.name !== name);
+        return () => {
+            setBasket(remove);
+            localStorageUtil.updateBasket(remove)
         }
     };
 
@@ -25,7 +25,7 @@ export const ProductCart = ({product, index}) => {
                 <p className={"productName"}>{product.name}</p>
                 <p className={"productQty"}>Quantity: 1</p>
                 <p className={"productPrice"}>${product.price}</p>
-                <RemoveBtn size={'small'} onClick={removeHandler(product.name)}>Remove</RemoveBtn>
+                <RemoveBtn size={'small'} onClick={removeHandler(product)}>Remove</RemoveBtn>
             </div>
         </FlexItem>
     )

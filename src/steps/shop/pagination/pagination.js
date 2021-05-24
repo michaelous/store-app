@@ -7,32 +7,24 @@ import {AppContext} from "../../../components/context/appContext";
 import {maxProductPerPage} from "../../../components/consts/default";
 import {PageArrow} from "../../../components/styledComponents/pageArrow";
 
-export const Pagination = (quantity) => {
+export const Pagination = ({items}) => {
     const {page, setPage} = useContext(AppContext);
     const [productsPerPage, setProductsPerPage] = useState(4);
 
-    const getNumberOfPages = () => {
-        return Math.ceil(quantity.items / maxProductPerPage);
-    };
+    const getNumberOfPages = () => Math.ceil(items / maxProductPerPage);
+    const previousPage = () => (page !== 1) && setPage(page - 1);
+    const nextPage = () => (page < getNumberOfPages()) && setPage(page + 1);
 
     useEffect(() => {
         setProductsPerPage(getNumberOfPages);
-        if (quantity.items <= 4) setPage(1);
-    }, [quantity.items]);
+        if (items <= 4) setPage(1);
+    }, [items]);
 
     const pageHandler = (val) => {
         return (event) => {
             setPage(val);
             event.preventDefault();
         }
-    };
-
-    const nextPage = () => {
-        if (page < getNumberOfPages()) setPage(page + 1);
-    };
-
-    const previousPage = () => {
-        if (page !== 1) setPage(page - 1);
     };
 
     const pagination = () => {
@@ -54,7 +46,7 @@ export const Pagination = (quantity) => {
     };
 
     const paginationText = () => {
-        return <p className={"paginationText"}>Showing {quantity.items} products</p>
+        return <p className={"paginationText"}>Showing {items} products</p>
     };
 
     return (<FlexItem className={`productsControls topControls`}

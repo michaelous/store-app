@@ -27,7 +27,5 @@ export class productsHelper {
         return this.sortItems(byPrice, sort);
     };
 
-    static totalPrice = (basket) => {
-        return basket.reduce((accelerator, item) => accelerator + item.price * 1, 0).toFixed(2);
-    }
+    static totalPrice = (basket) => basket.reduce((sum, item) => sum + item.price * 1, 0)
 }
