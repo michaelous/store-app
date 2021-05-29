@@ -17,7 +17,7 @@ export const ProductCart = ({product, index}) => {
         }
     };
 
-    return (<FlexItem key={index} className={"productCartWrapper"}
+    return (<FlexItem key={product.id} className={"productCartWrapper"}
                       alignItems={align.CENTER}
                       justifyContent={justify.SPACE_AROUND}>
             <img alt={"product"} className={"productImgCart"} src={product.image}/>

@@ -24,6 +24,10 @@
     box-shadow: -20px 0px 57px 2000px rgba(0, 0, 0, 0.35);
     background-color: rgba(0, 0, 0, 0.4);
 
+    button {
+      visibility: visible;
+    }
+
     .inside-cart {
       transition: 350ms;
       padding: 0 0 15px 0;

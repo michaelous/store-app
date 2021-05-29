@@ -4,6 +4,7 @@ import {useForm} from "react-hook-form";
 export const Form = () => {
     const {register, handleSubmit, formState: {errors}, reset} = useForm();
     const onSubmit = async (data) => {
+        console.log(data);
         reset();
     };
 

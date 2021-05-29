@@ -34,9 +34,6 @@ export const Payment = () => {
                 </FlexItem>
 
                 <Form/>
-
-                {/*<p className={"acceptedPayments"}>We Accept</p>*/}
-                {/*<img className={'visa'} alt={'payments'} src={payment}/>*/}
             </div>
         </div>
     )

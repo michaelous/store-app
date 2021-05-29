@@ -58,12 +58,11 @@ export const Products = () => {
                       flexDirection={direction.ROW}
                       justifyContent={justify.CENTER}
                       alignItems={align.CENTER}>
-                {paginate(items, maxProductPerPage, page).map((item, index) => {
+                {paginate(items, maxProductPerPage, page).map((item) => {
                     return <div onClick={productHandler(item.name)}
-                                className={`product ${inCart(item) ? 'inCart ' : ''}`} key={index}>
+                                className={`product ${inCart(item) ? 'inCart ' : ''}`} key={item.id}>
                         <img onLoad={onLoad} alt={'product'} className={`productImg ${loaded ? 'showProduct' : ''}`}
                              src={item.image}/>
-                        <p className={"productId"}>{item.id}</p>
                         <div className={"productDetails"}>
                             <p className={"productTitle"}>{item.name}</p>
                             <p className={"productPrice"}>${item.price}</p>

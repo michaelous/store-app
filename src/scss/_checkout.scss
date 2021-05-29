@@ -3,6 +3,14 @@
   overflow: hidden;
   width: 100%;
 
+  .emptyIcon {
+    display: flex;
+    padding-top: 80px;
+    max-width: 350px;
+    margin: 0 auto;
+    position: relative;
+  }
+
   .checkoutHeader {
     width: 100%;
     background: $lightGrey;
