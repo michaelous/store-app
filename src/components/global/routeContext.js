@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {defaultCategory, defaultPriceRange, defaultSort, initialPage} from "../consts/default";
 import {AppContext} from "../context/appContext";
@@ -10,27 +10,39 @@ import {Elements} from "../../steps/elements/elements";
 import {Checkout} from "../../steps/checkout/checkout";
 import {localStorageUtil} from "../storage/localStorage";
 import {useMediaQuery} from 'react-responsive'
+import {shopReducer, ADD_PRODUCT, REMOVE_PRODUCT} from '../../store/reducers';
 
 export const RouteContext = () => {
     const [sort, setSort] = useState(defaultSort);
     const [page, setPage] = useState(initialPage);
     const [category, setCategory] = useState(defaultCategory);
     const [priceRange, setPriceRange] = useState(defaultPriceRange);
-    const basketData = localStorageUtil.getDataByKey('basket') || [];
-    const [basket, setBasket] = useState(basketData);
     const isMobile = useMediaQuery({query: '(max-width: 992px)'});
+    const basketData = localStorageUtil.getDataByKey('basket') || [];
+    const initialState = {cart: basketData}
+    const [cartState, dispatch] = useReducer(shopReducer, initialState);
 
-    const combinedFilters = {
+    const addProductToCart = (product) => {
+        dispatch({type: ADD_PRODUCT, product: product});
+    };
+
+    const removeProductFromCart = (product) => {
+        dispatch({type: REMOVE_PRODUCT, product: product})
+    };
+
+    const combinedContext = {
         isMobile,
         page, setPage,
         sort, setSort,
-        basket, setBasket,
         category, setCategory,
-        priceRange, setPriceRange
+        priceRange, setPriceRange,
+        basket: cartState.cart,
+        addProductToCart,
+        removeProductFromCart
     };
 
     return (
-        <AppContext.Provider value={combinedFilters}>
+        <AppContext.Provider value={combinedContext}>
             <Router>
                 <Navbar/>
                 <Switch>

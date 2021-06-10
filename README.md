@@ -2,8 +2,9 @@
 
 
 React Hooks <br>
-React Hook Form <br>
 React Router <br>
+React Reducer <br>
+React Hook Form <br>
 Context API <br>
 Local Storage <br>
 Styled-components <br>

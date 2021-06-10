@@ -17,6 +17,10 @@ export class productsHelper {
         return data.filter((character) => this.isBetween(priceRange[0], priceRange[1], character.price));
     };
 
+    static itemInCart = (item, basket) => {
+        return basket.some(({name}) => name === item.name);
+    };
+
     static sortItems = (data, sort) => {
         return sort === 'NAME' ? this.sortByABCName(data) : this.sortByPrice(data);
     };

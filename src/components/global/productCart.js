@@ -7,14 +7,11 @@ import {align} from "../consts/FlexAlign";
 import {RemoveBtn} from "../styledComponents/removeButton";
 
 export const ProductCart = ({product, index}) => {
-    const {basket, setBasket} = useContext(AppContext);
+    const {basket, removeProductFromCart} = useContext(AppContext);
 
     const removeHandler = ({name}) => {
         const remove = basket.filter(product => product.name !== name);
-        return () => {
-            setBasket(remove);
-            localStorageUtil.updateBasket(remove)
-        }
+        removeProductFromCart(remove);
     };
 
     return (<FlexItem key={product.id} className={"productCartWrapper"}
@@ -25,7 +22,7 @@ export const ProductCart = ({product, index}) => {
                 <p className={"productName"}>{product.name}</p>
                 <p className={"productQty"}>Quantity: 1</p>
                 <p className={"productPrice"}>${product.price}</p>
-                <RemoveBtn size={'small'} onClick={removeHandler(product)}>Remove</RemoveBtn>
+                <RemoveBtn size={'small'} onClick={() => removeHandler(product)}>Remove</RemoveBtn>
             </div>
         </FlexItem>
     )
