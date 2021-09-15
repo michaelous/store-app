@@ -1,6 +1,6 @@
-import React, {useState, useReducer} from 'react';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import {defaultCategory, defaultPriceRange, defaultSort, initialPage} from "../consts/default";
+import React, { useState, useReducer } from 'react';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { defaultCategory, defaultPriceRange, defaultSort, initialPage } from '../consts/default';
 import {AppContext} from "../context/appContext";
 import {Newsletter} from "./newsletter";
 import {Navbar} from "./navbar";
